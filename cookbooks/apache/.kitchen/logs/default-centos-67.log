@@ -1,172 +1,1090 @@
-I, [2018-08-01T01:28:18.321619 #1512]  INFO -- default-centos-67: -----> Cleaning up any prior instances of <default-centos-67>
-I, [2018-08-01T01:28:18.323830 #1512]  INFO -- default-centos-67: -----> Destroying <default-centos-67>...
-I, [2018-08-01T01:28:18.483712 #1512]  INFO -- default-centos-67: UID                 PID                 PPID                C                   STIME               TTY                 TIME                CMD
-I, [2018-08-01T01:28:18.483921 #1512]  INFO -- default-centos-67: root                31486               1010                0                   01:15               ?                   00:00:00            /usr/sbin/sshd -D -o UseDNS=no -o UsePAM=no -o PasswordAuthentication=yes -o UsePrivilegeSeparation=no -o PidFile=/tmp/sshd.pid
-I, [2018-08-01T01:28:18.483995 #1512]  INFO -- default-centos-67: root                32022               31486               0                   01:17               ?                   00:00:00            /usr/sbin/httpd
-I, [2018-08-01T01:28:18.487966 #1512]  INFO -- default-centos-67: apache              32024               32022               0                   01:17               ?                   00:00:00            /usr/sbin/httpd
-I, [2018-08-01T01:28:18.488050 #1512]  INFO -- default-centos-67: apache              32025               32022               0                   01:17               ?                   00:00:00            /usr/sbin/httpd
-I, [2018-08-01T01:28:18.488117 #1512]  INFO -- default-centos-67: apache              32026               32022               0                   01:17               ?                   00:00:00            /usr/sbin/httpd
-I, [2018-08-01T01:28:18.488504 #1512]  INFO -- default-centos-67: apache              32027               32022               0                   01:17               ?                   00:00:00            /usr/sbin/httpd
-I, [2018-08-01T01:28:18.488588 #1512]  INFO -- default-centos-67: apache              32028               32022               0                   01:17               ?                   00:00:00            /usr/sbin/httpd
-I, [2018-08-01T01:28:18.488651 #1512]  INFO -- default-centos-67: apache              32029               32022               0                   01:17               ?                   00:00:00            /usr/sbin/httpd
-I, [2018-08-01T01:28:18.488747 #1512]  INFO -- default-centos-67: apache              32030               32022               0                   01:17               ?                   00:00:00            /usr/sbin/httpd
-I, [2018-08-01T01:28:18.488816 #1512]  INFO -- default-centos-67: apache              32031               32022               0                   01:17               ?                   00:00:00            /usr/sbin/httpd
-I, [2018-08-01T01:28:18.862051 #1512]  INFO -- default-centos-67: 646f339a6c07878743e1ed35c061a23af989aef7d1541e8afc319ff9a117320a
-I, [2018-08-01T01:28:20.859090 #1512]  INFO -- default-centos-67: 646f339a6c07878743e1ed35c061a23af989aef7d1541e8afc319ff9a117320a
-I, [2018-08-01T01:28:20.887978 #1512]  INFO -- default-centos-67: Finished destroying <default-centos-67> (0m2.56s).
-I, [2018-08-01T01:28:20.889650 #1512]  INFO -- default-centos-67: -----> Testing <default-centos-67>
-I, [2018-08-01T01:28:20.889909 #1512]  INFO -- default-centos-67: -----> Creating <default-centos-67>...
-I, [2018-08-01T01:28:21.002439 #1512]  INFO -- default-centos-67: Sending build context to Docker daemon 33.28 kB
-I, [2018-08-01T01:28:21.002906 #1512]  INFO -- default-centos-67: Sending build context to Docker daemon 
-I, [2018-08-01T01:28:21.076199 #1512]  INFO -- default-centos-67: Step 0 : FROM centos:centos6
-I, [2018-08-01T01:28:21.090278 #1512]  INFO -- default-centos-67:  ---> 97ca252d0770
-I, [2018-08-01T01:28:21.092922 #1512]  INFO -- default-centos-67: Step 1 : ENV container docker
-I, [2018-08-01T01:28:21.155763 #1512]  INFO -- default-centos-67:  ---> Using cache
-I, [2018-08-01T01:28:21.157464 #1512]  INFO -- default-centos-67:  ---> 34a094fbd5e6
-I, [2018-08-01T01:28:21.158756 #1512]  INFO -- default-centos-67: Step 2 : RUN yum clean all
-I, [2018-08-01T01:28:21.172906 #1512]  INFO -- default-centos-67:  ---> Using cache
-I, [2018-08-01T01:28:21.173064 #1512]  INFO -- default-centos-67:  ---> a6f342bc2f9c
-I, [2018-08-01T01:28:21.173171 #1512]  INFO -- default-centos-67: Step 3 : RUN yum install -y sudo openssh-server openssh-clients which curl
-I, [2018-08-01T01:28:21.179750 #1512]  INFO -- default-centos-67:  ---> Using cache
-I, [2018-08-01T01:28:21.180375 #1512]  INFO -- default-centos-67:  ---> 67ccabbe39cd
-I, [2018-08-01T01:28:21.181277 #1512]  INFO -- default-centos-67: Step 4 : RUN ssh-keygen -t rsa -f /etc/ssh/ssh_host_rsa_key -N ''
-I, [2018-08-01T01:28:21.188276 #1512]  INFO -- default-centos-67:  ---> Using cache
-I, [2018-08-01T01:28:21.188926 #1512]  INFO -- default-centos-67:  ---> 1ae68459c6c1
-I, [2018-08-01T01:28:21.189532 #1512]  INFO -- default-centos-67: Step 5 : RUN ssh-keygen -t dsa -f /etc/ssh/ssh_host_dsa_key -N ''
-I, [2018-08-01T01:28:21.196565 #1512]  INFO -- default-centos-67:  ---> Using cache
-I, [2018-08-01T01:28:21.197139 #1512]  INFO -- default-centos-67:  ---> f033566ac8a0
-I, [2018-08-01T01:28:21.198119 #1512]  INFO -- default-centos-67: Step 6 : RUN if ! getent passwd kitchen; then                 useradd -d /home/kitchen -m -s /bin/bash -p '*' kitchen;               fi
-I, [2018-08-01T01:28:21.205105 #1512]  INFO -- default-centos-67:  ---> Using cache
-I, [2018-08-01T01:28:21.205820 #1512]  INFO -- default-centos-67:  ---> da71bf462e4a
-I, [2018-08-01T01:28:21.206665 #1512]  INFO -- default-centos-67: Step 7 : RUN echo "kitchen ALL=(ALL) NOPASSWD: ALL" >> /etc/sudoers
-I, [2018-08-01T01:28:21.214560 #1512]  INFO -- default-centos-67:  ---> Using cache
-I, [2018-08-01T01:28:21.215121 #1512]  INFO -- default-centos-67:  ---> 01762ea6d9b6
-I, [2018-08-01T01:28:21.216026 #1512]  INFO -- default-centos-67: Step 8 : RUN echo "Defaults !requiretty" >> /etc/sudoers
-I, [2018-08-01T01:28:21.223505 #1512]  INFO -- default-centos-67:  ---> Using cache
-I, [2018-08-01T01:28:21.224244 #1512]  INFO -- default-centos-67:  ---> 4b1087b769fb
-I, [2018-08-01T01:28:21.225206 #1512]  INFO -- default-centos-67: Step 9 : RUN mkdir -p /home/kitchen/.ssh
-I, [2018-08-01T01:28:21.232413 #1512]  INFO -- default-centos-67:  ---> Using cache
-I, [2018-08-01T01:28:21.233080 #1512]  INFO -- default-centos-67:  ---> fc1245fd600f
-I, [2018-08-01T01:28:21.233933 #1512]  INFO -- default-centos-67: Step 10 : RUN chown -R kitchen /home/kitchen/.ssh
-I, [2018-08-01T01:28:21.240743 #1512]  INFO -- default-centos-67:  ---> Using cache
-I, [2018-08-01T01:28:21.241497 #1512]  INFO -- default-centos-67:  ---> b586f48696ef
-I, [2018-08-01T01:28:21.242182 #1512]  INFO -- default-centos-67: Step 11 : RUN chmod 0700 /home/kitchen/.ssh
-I, [2018-08-01T01:28:21.250857 #1512]  INFO -- default-centos-67:  ---> Using cache
-I, [2018-08-01T01:28:21.251584 #1512]  INFO -- default-centos-67:  ---> 54da6dffefbc
-I, [2018-08-01T01:28:21.252356 #1512]  INFO -- default-centos-67: Step 12 : RUN touch /home/kitchen/.ssh/authorized_keys
-I, [2018-08-01T01:28:21.259331 #1512]  INFO -- default-centos-67:  ---> Using cache
-I, [2018-08-01T01:28:21.260188 #1512]  INFO -- default-centos-67:  ---> 5693d02df347
-I, [2018-08-01T01:28:21.260899 #1512]  INFO -- default-centos-67: Step 13 : RUN chown kitchen /home/kitchen/.ssh/authorized_keys
-I, [2018-08-01T01:28:21.268039 #1512]  INFO -- default-centos-67:  ---> Using cache
-I, [2018-08-01T01:28:21.268857 #1512]  INFO -- default-centos-67:  ---> b2025bac48cd
-I, [2018-08-01T01:28:21.269389 #1512]  INFO -- default-centos-67: Step 14 : RUN chmod 0600 /home/kitchen/.ssh/authorized_keys
-I, [2018-08-01T01:28:21.281969 #1512]  INFO -- default-centos-67:  ---> Using cache
-I, [2018-08-01T01:28:21.282755 #1512]  INFO -- default-centos-67:  ---> 57b16b4c9bde
-I, [2018-08-01T01:28:21.283416 #1512]  INFO -- default-centos-67: Step 15 : RUN echo ssh-rsa\ AAAAB3NzaC1yc2EAAAADAQABAAABAQCzNUz901cC2wJsTdVxrXMLspaic/rIx0Q/eSSs5TxmIYgKNAiQ1I/vTAd3CI0EIMLjpJJkgCy3n2s2i9EikhML3yoqDc5SJjyrO8dp4OcxGovZgAGZka/qfyNsrdBZ7St\+p5R5DuFpp9uJWrwOw\+Cg4x1gzi6gMJ1ow42QkDQ5FHEacvzO8eH1FGR8fGIFnEBUXp7bZFVJryyjnn\+Vcj58ozqtT1wgYQXp4rHXlZRqoX80oIoXdSdm4sCiqzFxVHMQonobf2jsFkDQM617oXo5VMQtGWJSSIjBHIKPoDvsv9KblJnU26vacDbvAJNWGH\+7h3wKufLympxBMlgdgtdZ\ kitchen_docker_key >> /home/kitchen/.ssh/authorized_keys
-I, [2018-08-01T01:28:21.289626 #1512]  INFO -- default-centos-67:  ---> Using cache
-I, [2018-08-01T01:28:21.290284 #1512]  INFO -- default-centos-67:  ---> 3024890158d9
-I, [2018-08-01T01:28:21.291046 #1512]  INFO -- default-centos-67: Successfully built 3024890158d9
-I, [2018-08-01T01:28:21.723921 #1512]  INFO -- default-centos-67: 413790fab1a99b5a51cba2533a6bd43bd7b461fbfadb0fde7517ed8947157a89
-I, [2018-08-01T01:28:22.658533 #1512]  INFO -- default-centos-67: 0.0.0.0:32775
-I, [2018-08-01T01:28:22.902321 #1512]  INFO -- default-centos-67: [SSH] Established
-I, [2018-08-01T01:28:22.907560 #1512]  INFO -- default-centos-67: Finished creating <default-centos-67> (0m2.02s).
-I, [2018-08-01T01:28:22.907825 #1512]  INFO -- default-centos-67: -----> Converging <default-centos-67>...
-I, [2018-08-01T01:28:22.910146 #1512]  INFO -- default-centos-67: Preparing files for transfer
-I, [2018-08-01T01:28:22.910776 #1512]  INFO -- default-centos-67: Preparing dna.json
-I, [2018-08-01T01:28:22.911686 #1512]  INFO -- default-centos-67: Resolving cookbook dependencies with Berkshelf 6.2.0...
-I, [2018-08-01T01:28:33.820015 #1512]  INFO -- default-centos-67: Removing non-cookbook files before transfer
-I, [2018-08-01T01:28:33.932939 #1512]  INFO -- default-centos-67: Preparing validation.pem
-I, [2018-08-01T01:28:33.935374 #1512]  INFO -- default-centos-67: Preparing client.rb
-I, [2018-08-01T01:28:34.954779 #1512]  INFO -- default-centos-67: -----> Installing Chef Omnibus (install only if missing)
-I, [2018-08-01T01:28:35.052752 #1512]  INFO -- default-centos-67: Downloading https://omnitruck.chef.io/install.sh to file /tmp/install.sh
-I, [2018-08-01T01:28:35.054970 #1512]  INFO -- default-centos-67: Trying curl...
-I, [2018-08-01T01:28:36.653294 #1512]  INFO -- default-centos-67: Download complete.
-I, [2018-08-01T01:28:37.572338 #1512]  INFO -- default-centos-67: el 6 x86_64
-I, [2018-08-01T01:28:37.574139 #1512]  INFO -- default-centos-67: Getting information for chef stable  for el...
-I, [2018-08-01T01:28:37.575974 #1512]  INFO -- default-centos-67: downloading https://omnitruck.chef.io/stable/chef/metadata?v=&p=el&pv=6&m=x86_64
-I, [2018-08-01T01:28:37.576058 #1512]  INFO -- default-centos-67:   to file /tmp/install.sh.36/metadata.txt
-I, [2018-08-01T01:28:37.689136 #1512]  INFO -- default-centos-67: trying curl...
-I, [2018-08-01T01:28:39.461557 #1512]  INFO -- default-centos-67: sha1	781573ce048d7bde8b94403fad00ffee8fb87bcb
-I, [2018-08-01T01:28:39.461692 #1512]  INFO -- default-centos-67: sha256	afbe87df432e6b7c02dfda141c38ba93c29ace11cbf5de03e505b5cb902fc6d1
-I, [2018-08-01T01:28:39.461759 #1512]  INFO -- default-centos-67: url	https://packages.chef.io/files/stable/chef/14.3.37/el/6/chef-14.3.37-1.el6.x86_64.rpm
-I, [2018-08-01T01:28:39.461820 #1512]  INFO -- default-centos-67: version	14.3.37
-I, [2018-08-01T01:28:39.544995 #1512]  INFO -- default-centos-67: downloaded metadata file looks valid...
-I, [2018-08-01T01:28:40.257929 #1512]  INFO -- default-centos-67: downloading https://packages.chef.io/files/stable/chef/14.3.37/el/6/chef-14.3.37-1.el6.x86_64.rpm
-I, [2018-08-01T01:28:40.258063 #1512]  INFO -- default-centos-67:   to file /tmp/install.sh.36/chef-14.3.37-1.el6.x86_64.rpm
-I, [2018-08-01T01:28:40.258130 #1512]  INFO -- default-centos-67: trying curl...
-I, [2018-08-01T01:29:19.262374 #1512]  INFO -- default-centos-67: Comparing checksum with sha256sum...
-I, [2018-08-01T01:29:19.898473 #1512]  INFO -- default-centos-67: 
-I, [2018-08-01T01:29:19.898628 #1512]  INFO -- default-centos-67: WARNING WARNING WARNING WARNING WARNING WARNING WARNING WARNING WARNING
-I, [2018-08-01T01:29:19.898695 #1512]  INFO -- default-centos-67: 
-I, [2018-08-01T01:29:19.898755 #1512]  INFO -- default-centos-67: You are installing an omnibus package without a version pin.  If you are installing
-I, [2018-08-01T01:29:19.898815 #1512]  INFO -- default-centos-67: on production servers via an automated process this is DANGEROUS and you will
-I, [2018-08-01T01:29:19.898895 #1512]  INFO -- default-centos-67: be upgraded without warning on new releases, even to new major releases.
-I, [2018-08-01T01:29:19.898957 #1512]  INFO -- default-centos-67: Letting the version float is only appropriate in desktop, test, development or
-I, [2018-08-01T01:29:19.901152 #1512]  INFO -- default-centos-67: CI/CD environments.
-I, [2018-08-01T01:29:19.901234 #1512]  INFO -- default-centos-67: 
-I, [2018-08-01T01:29:19.901295 #1512]  INFO -- default-centos-67: WARNING WARNING WARNING WARNING WARNING WARNING WARNING WARNING WARNING
-I, [2018-08-01T01:29:19.901352 #1512]  INFO -- default-centos-67: 
-I, [2018-08-01T01:29:19.901462 #1512]  INFO -- default-centos-67: Installing chef 
-I, [2018-08-01T01:29:19.903184 #1512]  INFO -- default-centos-67: installing with rpm...
-I, [2018-08-01T01:29:20.370496 #1512]  INFO -- default-centos-67: warning: /tmp/install.sh.36/chef-14.3.37-1.el6.x86_64.rpm: Header V4 DSA/SHA1 Signature, key ID 83ef826a: NOKEY
-I, [2018-08-01T01:29:20.966373 #1512]  INFO -- default-centos-67: Preparing...                                                            (100%)#                                           (100%)##                                          (100%)###                                         (100%)####                                        (100%)#####                                       (100%)######                                      (100%)#######                                     (100%)########                                    (100%)#########                                   (100%)##########                                  (100%)###########                                 (100%)############                                (100%)#############                               (100%)##############                              (100%)###############                             (100%)################                            (100%)#################                           (100%)##################                          (100%)###################                         (100%)####################                        (100%)#####################                       (100%)######################                      (100%)#######################                     (100%)########################                    (100%)#########################                   (100%)##########################                  (100%)###########################                 (100%)############################                (100%)#############################               (100%)##############################              (100%)###############################             (100%)################################            (100%)#################################           (100%)##################################          (100%)###################################         (100%)####################################        (100%)#####################################       (100%)######################################      (100%)#######################################     (100%)########################################    (100%)#########################################   (100%)##########################################  (100%)########################################### (100%)########################################### [100%]
-I, [2018-08-01T01:30:09.838814 #1512]  INFO -- default-centos-67:    1:chef                                                               (  1%)#                                           (  3%)##                                          (  6%)###                                         (  8%)####                                        ( 10%)#####                                       ( 13%)######                                      ( 15%)#######                                     ( 17%)########                                    ( 19%)#########                                   ( 22%)##########                                  ( 24%)###########                                 ( 26%)############                                ( 28%)#############                               ( 31%)##############                              ( 33%)###############                             ( 35%)################                            ( 38%)#################                           ( 40%)##################                          ( 42%)###################                         ( 44%)####################                        ( 47%)#####################                       ( 49%)######################                      ( 51%)#######################                     ( 53%)########################                    ( 56%)#########################                   ( 58%)##########################                  ( 60%)###########################                 ( 63%)############################                ( 65%)#############################               ( 67%)##############################              ( 69%)###############################             ( 72%)################################            ( 74%)#################################           ( 76%)##################################          ( 78%)###################################         ( 81%)####################################        ( 83%)#####################################       ( 85%)######################################      ( 88%)#######################################     ( 90%)########################################    ( 92%)#########################################   ( 94%)##########################################  ( 97%)########################################### ( 99%)########################################### [100%]
-I, [2018-08-01T01:30:24.110598 #1512]  INFO -- default-centos-67: Thank you for installing Chef!
-I, [2018-08-01T01:30:24.467155 #1512]  INFO -- default-centos-67: Transferring files to <default-centos-67>
-I, [2018-08-01T01:30:28.551463 #1512]  INFO -- default-centos-67: Starting Chef Client, version 14.3.37
-I, [2018-08-01T01:30:32.255384 #1512]  INFO -- default-centos-67: Creating a new client identity for default-centos-67 using the validator key.
-I, [2018-08-01T01:30:32.379448 #1512]  INFO -- default-centos-67: resolving cookbooks for run list: ["apache::default"]
-I, [2018-08-01T01:30:32.415456 #1512]  INFO -- default-centos-67: Synchronizing Cookbooks:
-I, [2018-08-01T01:30:32.438243 #1512]  INFO -- default-centos-67:   - apache (0.1.0)
-I, [2018-08-01T01:30:32.438368 #1512]  INFO -- default-centos-67: Installing Cookbook Gems:
-I, [2018-08-01T01:30:32.443000 #1512]  INFO -- default-centos-67: Compiling Cookbooks...
-I, [2018-08-01T01:30:32.453048 #1512]  INFO -- default-centos-67: Converging 3 resources
-I, [2018-08-01T01:30:32.453145 #1512]  INFO -- default-centos-67: Recipe: apache::server
-I, [2018-08-01T01:31:09.130648 #1512]  INFO -- default-centos-67:   * yum_package[httpd] action install
-I, [2018-08-01T01:31:09.233141 #1512]  INFO -- default-centos-67:     - install version 0:2.2.15-69.el6.centos.x86_64 of package httpd
-I, [2018-08-01T01:31:09.447288 #1512]  INFO -- default-centos-67:   * file[/var/www/html/index.html] action create
-I, [2018-08-01T01:31:09.697329 #1512]  INFO -- default-centos-67:     - create new file /var/www/html/index.html
-I, [2018-08-01T01:31:09.698160 #1512]  INFO -- default-centos-67:     - update content in file /var/www/html/index.html from none to b60ab4
-I, [2018-08-01T01:31:09.698233 #1512]  INFO -- default-centos-67:     --- /var/www/html/index.html	2018-08-01 01:31:09.444369775 +0000
-I, [2018-08-01T01:31:09.698297 #1512]  INFO -- default-centos-67:     +++ /var/www/html/.chef-index20180801-144-1uzc52t.html	2018-08-01 01:31:09.443369840 +0000
-I, [2018-08-01T01:31:09.698356 #1512]  INFO -- default-centos-67:     @@ -1 +1,4 @@
-I, [2018-08-01T01:31:09.698475 #1512]  INFO -- default-centos-67:     +<h1>Hello, world! </h1>
-I, [2018-08-01T01:31:09.698555 #1512]  INFO -- default-centos-67:     +           <p>IPADDRESS: 172.17.0.23</p>
-I, [2018-08-01T01:31:10.634383 #1512]  INFO -- default-centos-67:     +           <p>HOSTNAME: 413790fab1a9</p>
-I, [2018-08-01T01:31:14.864510 #1512]  INFO -- default-centos-67:   * service[httpd] action enable
-I, [2018-08-01T01:31:14.868994 #1512]  INFO -- default-centos-67:     - enable service service[httpd]
-I, [2018-08-01T01:31:20.244349 #1512]  INFO -- default-centos-67:   * service[httpd] action start
-I, [2018-08-01T01:31:20.246975 #1512]  INFO -- default-centos-67:     - start service service[httpd]
-I, [2018-08-01T01:31:21.585442 #1512]  INFO -- default-centos-67: 
-I, [2018-08-01T01:31:21.585588 #1512]  INFO -- default-centos-67: Running handlers:
-I, [2018-08-01T01:31:21.585655 #1512]  INFO -- default-centos-67: Running handlers complete
-I, [2018-08-01T01:31:21.585722 #1512]  INFO -- default-centos-67: Chef Client finished, 4/4 resources updated in 53 seconds
-I, [2018-08-01T01:31:22.549700 #1512]  INFO -- default-centos-67: Finished converging <default-centos-67> (2m59.64s).
-I, [2018-08-01T01:31:22.549963 #1512]  INFO -- default-centos-67: -----> Setting up <default-centos-67>...
-I, [2018-08-01T01:31:22.553434 #1512]  INFO -- default-centos-67: Finished setting up <default-centos-67> (0m0.00s).
-I, [2018-08-01T01:31:22.553647 #1512]  INFO -- default-centos-67: -----> Verifying <default-centos-67>...
-I, [2018-08-01T01:31:25.993232 #1512]  INFO -- default-centos-67: Loaded tests from test/smoke/default 
-E, [2018-08-01T01:31:26.399179 #1512] ERROR -- default-centos-67: Verify failed on instance <default-centos-67>.
-E, [2018-08-01T01:31:26.399580 #1512] ERROR -- default-centos-67: ------Exception-------
-E, [2018-08-01T01:31:26.399685 #1512] ERROR -- default-centos-67: Class: Kitchen::ActionFailed
-E, [2018-08-01T01:31:26.399741 #1512] ERROR -- default-centos-67: Message: Inspec Runner returns 1
-E, [2018-08-01T01:31:26.399789 #1512] ERROR -- default-centos-67: ----------------------
-E, [2018-08-01T01:31:26.399834 #1512] ERROR -- default-centos-67: ------Backtrace-------
-E, [2018-08-01T01:31:26.399880 #1512] ERROR -- default-centos-67: /opt/chefdk/embedded/lib/ruby/gems/2.4.0/gems/kitchen-inspec-0.19.0/lib/kitchen/verifier/inspec.rb:96:in `call'
-E, [2018-08-01T01:31:26.399928 #1512] ERROR -- default-centos-67: /opt/chefdk/embedded/lib/ruby/gems/2.4.0/gems/test-kitchen-1.16.0/lib/kitchen/instance.rb:434:in `block in verify_action'
-E, [2018-08-01T01:31:26.399976 #1512] ERROR -- default-centos-67: /opt/chefdk/embedded/lib/ruby/gems/2.4.0/gems/test-kitchen-1.16.0/lib/kitchen/instance.rb:527:in `synchronize_or_call'
-E, [2018-08-01T01:31:26.400024 #1512] ERROR -- default-centos-67: /opt/chefdk/embedded/lib/ruby/gems/2.4.0/gems/test-kitchen-1.16.0/lib/kitchen/instance.rb:489:in `block in action'
-E, [2018-08-01T01:31:26.400075 #1512] ERROR -- default-centos-67: /opt/chefdk/embedded/lib/ruby/2.4.0/benchmark.rb:293:in `measure'
-E, [2018-08-01T01:31:26.400123 #1512] ERROR -- default-centos-67: /opt/chefdk/embedded/lib/ruby/gems/2.4.0/gems/test-kitchen-1.16.0/lib/kitchen/instance.rb:488:in `action'
-E, [2018-08-01T01:31:26.400171 #1512] ERROR -- default-centos-67: /opt/chefdk/embedded/lib/ruby/gems/2.4.0/gems/test-kitchen-1.16.0/lib/kitchen/instance.rb:426:in `verify_action'
-E, [2018-08-01T01:31:26.400219 #1512] ERROR -- default-centos-67: /opt/chefdk/embedded/lib/ruby/gems/2.4.0/gems/test-kitchen-1.16.0/lib/kitchen/instance.rb:359:in `block in transition_to'
-E, [2018-08-01T01:31:26.400267 #1512] ERROR -- default-centos-67: /opt/chefdk/embedded/lib/ruby/gems/2.4.0/gems/test-kitchen-1.16.0/lib/kitchen/instance.rb:358:in `each'
-E, [2018-08-01T01:31:26.400315 #1512] ERROR -- default-centos-67: /opt/chefdk/embedded/lib/ruby/gems/2.4.0/gems/test-kitchen-1.16.0/lib/kitchen/instance.rb:358:in `transition_to'
-E, [2018-08-01T01:31:26.400362 #1512] ERROR -- default-centos-67: /opt/chefdk/embedded/lib/ruby/gems/2.4.0/gems/test-kitchen-1.16.0/lib/kitchen/instance.rb:157:in `verify'
-E, [2018-08-01T01:31:26.400466 #1512] ERROR -- default-centos-67: /opt/chefdk/embedded/lib/ruby/gems/2.4.0/gems/test-kitchen-1.16.0/lib/kitchen/instance.rb:186:in `block in test'
-E, [2018-08-01T01:31:26.400523 #1512] ERROR -- default-centos-67: /opt/chefdk/embedded/lib/ruby/2.4.0/benchmark.rb:293:in `measure'
-E, [2018-08-01T01:31:26.400572 #1512] ERROR -- default-centos-67: /opt/chefdk/embedded/lib/ruby/gems/2.4.0/gems/test-kitchen-1.16.0/lib/kitchen/instance.rb:182:in `test'
-E, [2018-08-01T01:31:26.400621 #1512] ERROR -- default-centos-67: /opt/chefdk/embedded/lib/ruby/gems/2.4.0/gems/test-kitchen-1.16.0/lib/kitchen/command.rb:197:in `public_send'
-E, [2018-08-01T01:31:26.400669 #1512] ERROR -- default-centos-67: /opt/chefdk/embedded/lib/ruby/gems/2.4.0/gems/test-kitchen-1.16.0/lib/kitchen/command.rb:197:in `run_action_in_thread'
-E, [2018-08-01T01:31:26.400717 #1512] ERROR -- default-centos-67: /opt/chefdk/embedded/lib/ruby/gems/2.4.0/gems/test-kitchen-1.16.0/lib/kitchen/command.rb:169:in `block (2 levels) in run_action'
-E, [2018-08-01T01:31:26.400765 #1512] ERROR -- default-centos-67: ----End Backtrace-----
+I, [2018-08-01T06:46:55.461281 #7724]  INFO -- default-centos-67: -----> Cleaning up any prior instances of <default-centos-67>
+I, [2018-08-01T06:46:55.461747 #7724]  INFO -- default-centos-67: -----> Destroying <default-centos-67>...
+I, [2018-08-01T06:46:55.463714 #7724]  INFO -- default-centos-67: Finished destroying <default-centos-67> (0m0.00s).
+I, [2018-08-01T06:46:55.464076 #7724]  INFO -- default-centos-67: -----> Testing <default-centos-67>
+I, [2018-08-01T06:46:55.464274 #7724]  INFO -- default-centos-67: -----> Creating <default-centos-67>...
+I, [2018-08-01T06:46:55.594165 #7724]  INFO -- default-centos-67: Sending build context to Docker daemon 41.98 kB
+I, [2018-08-01T06:46:55.594728 #7724]  INFO -- default-centos-67: Sending build context to Docker daemon 
+I, [2018-08-01T06:46:55.665076 #7724]  INFO -- default-centos-67: Step 0 : FROM centos:centos6
+I, [2018-08-01T06:46:55.671200 #7724]  INFO -- default-centos-67:  ---> 97ca252d0770
+I, [2018-08-01T06:46:55.675191 #7724]  INFO -- default-centos-67: Step 1 : ENV container docker
+I, [2018-08-01T06:46:55.724174 #7724]  INFO -- default-centos-67:  ---> Using cache
+I, [2018-08-01T06:46:55.726030 #7724]  INFO -- default-centos-67:  ---> 34a094fbd5e6
+I, [2018-08-01T06:46:55.726890 #7724]  INFO -- default-centos-67: Step 2 : RUN yum clean all
+I, [2018-08-01T06:46:55.738404 #7724]  INFO -- default-centos-67:  ---> Using cache
+I, [2018-08-01T06:46:55.739087 #7724]  INFO -- default-centos-67:  ---> a6f342bc2f9c
+I, [2018-08-01T06:46:55.740039 #7724]  INFO -- default-centos-67: Step 3 : RUN yum install -y sudo openssh-server openssh-clients which curl
+I, [2018-08-01T06:46:55.747286 #7724]  INFO -- default-centos-67:  ---> Using cache
+I, [2018-08-01T06:46:55.747955 #7724]  INFO -- default-centos-67:  ---> 67ccabbe39cd
+I, [2018-08-01T06:46:55.748665 #7724]  INFO -- default-centos-67: Step 4 : RUN ssh-keygen -t rsa -f /etc/ssh/ssh_host_rsa_key -N ''
+I, [2018-08-01T06:46:55.755501 #7724]  INFO -- default-centos-67:  ---> Using cache
+I, [2018-08-01T06:46:55.756077 #7724]  INFO -- default-centos-67:  ---> 1ae68459c6c1
+I, [2018-08-01T06:46:55.756842 #7724]  INFO -- default-centos-67: Step 5 : RUN ssh-keygen -t dsa -f /etc/ssh/ssh_host_dsa_key -N ''
+I, [2018-08-01T06:46:55.764096 #7724]  INFO -- default-centos-67:  ---> Using cache
+I, [2018-08-01T06:46:55.764811 #7724]  INFO -- default-centos-67:  ---> f033566ac8a0
+I, [2018-08-01T06:46:55.765424 #7724]  INFO -- default-centos-67: Step 6 : RUN if ! getent passwd kitchen; then                 useradd -d /home/kitchen -m -s /bin/bash -p '*' kitchen;               fi
+I, [2018-08-01T06:46:55.772408 #7724]  INFO -- default-centos-67:  ---> Using cache
+I, [2018-08-01T06:46:55.772990 #7724]  INFO -- default-centos-67:  ---> da71bf462e4a
+I, [2018-08-01T06:46:55.773811 #7724]  INFO -- default-centos-67: Step 7 : RUN echo "kitchen ALL=(ALL) NOPASSWD: ALL" >> /etc/sudoers
+I, [2018-08-01T06:46:55.780739 #7724]  INFO -- default-centos-67:  ---> Using cache
+I, [2018-08-01T06:46:55.781337 #7724]  INFO -- default-centos-67:  ---> 01762ea6d9b6
+I, [2018-08-01T06:46:55.782179 #7724]  INFO -- default-centos-67: Step 8 : RUN echo "Defaults !requiretty" >> /etc/sudoers
+I, [2018-08-01T06:46:55.789242 #7724]  INFO -- default-centos-67:  ---> Using cache
+I, [2018-08-01T06:46:55.789931 #7724]  INFO -- default-centos-67:  ---> 4b1087b769fb
+I, [2018-08-01T06:46:55.790504 #7724]  INFO -- default-centos-67: Step 9 : RUN mkdir -p /home/kitchen/.ssh
+I, [2018-08-01T06:46:55.797383 #7724]  INFO -- default-centos-67:  ---> Using cache
+I, [2018-08-01T06:46:55.798079 #7724]  INFO -- default-centos-67:  ---> fc1245fd600f
+I, [2018-08-01T06:46:55.798809 #7724]  INFO -- default-centos-67: Step 10 : RUN chown -R kitchen /home/kitchen/.ssh
+I, [2018-08-01T06:46:55.805612 #7724]  INFO -- default-centos-67:  ---> Using cache
+I, [2018-08-01T06:46:55.806217 #7724]  INFO -- default-centos-67:  ---> b586f48696ef
+I, [2018-08-01T06:46:55.806905 #7724]  INFO -- default-centos-67: Step 11 : RUN chmod 0700 /home/kitchen/.ssh
+I, [2018-08-01T06:46:55.814219 #7724]  INFO -- default-centos-67:  ---> Using cache
+I, [2018-08-01T06:46:55.814947 #7724]  INFO -- default-centos-67:  ---> 54da6dffefbc
+I, [2018-08-01T06:46:55.815686 #7724]  INFO -- default-centos-67: Step 12 : RUN touch /home/kitchen/.ssh/authorized_keys
+I, [2018-08-01T06:46:55.822617 #7724]  INFO -- default-centos-67:  ---> Using cache
+I, [2018-08-01T06:46:55.823201 #7724]  INFO -- default-centos-67:  ---> 5693d02df347
+I, [2018-08-01T06:46:55.823941 #7724]  INFO -- default-centos-67: Step 13 : RUN chown kitchen /home/kitchen/.ssh/authorized_keys
+I, [2018-08-01T06:46:55.831042 #7724]  INFO -- default-centos-67:  ---> Using cache
+I, [2018-08-01T06:46:55.831719 #7724]  INFO -- default-centos-67:  ---> b2025bac48cd
+I, [2018-08-01T06:46:55.832370 #7724]  INFO -- default-centos-67: Step 14 : RUN chmod 0600 /home/kitchen/.ssh/authorized_keys
+I, [2018-08-01T06:46:55.846467 #7724]  INFO -- default-centos-67:  ---> Using cache
+I, [2018-08-01T06:46:55.850331 #7724]  INFO -- default-centos-67:  ---> 57b16b4c9bde
+I, [2018-08-01T06:46:55.851524 #7724]  INFO -- default-centos-67: Step 15 : RUN echo ssh-rsa\ AAAAB3NzaC1yc2EAAAADAQABAAABAQCzNUz901cC2wJsTdVxrXMLspaic/rIx0Q/eSSs5TxmIYgKNAiQ1I/vTAd3CI0EIMLjpJJkgCy3n2s2i9EikhML3yoqDc5SJjyrO8dp4OcxGovZgAGZka/qfyNsrdBZ7St\+p5R5DuFpp9uJWrwOw\+Cg4x1gzi6gMJ1ow42QkDQ5FHEacvzO8eH1FGR8fGIFnEBUXp7bZFVJryyjnn\+Vcj58ozqtT1wgYQXp4rHXlZRqoX80oIoXdSdm4sCiqzFxVHMQonobf2jsFkDQM617oXo5VMQtGWJSSIjBHIKPoDvsv9KblJnU26vacDbvAJNWGH\+7h3wKufLympxBMlgdgtdZ\ kitchen_docker_key >> /home/kitchen/.ssh/authorized_keys
+I, [2018-08-01T06:46:55.861473 #7724]  INFO -- default-centos-67:  ---> Using cache
+I, [2018-08-01T06:46:55.862158 #7724]  INFO -- default-centos-67:  ---> 3024890158d9
+I, [2018-08-01T06:46:55.862878 #7724]  INFO -- default-centos-67: Successfully built 3024890158d9
+I, [2018-08-01T06:46:56.276687 #7724]  INFO -- default-centos-67: f320b57a209804353c2b9197f28f216aeed55958cee4d7198bed367691660cf5
+I, [2018-08-01T06:46:57.218155 #7724]  INFO -- default-centos-67: 0.0.0.0:32778
+I, [2018-08-01T06:46:57.476505 #7724]  INFO -- default-centos-67: [SSH] Established
+I, [2018-08-01T06:46:57.481799 #7724]  INFO -- default-centos-67: Finished creating <default-centos-67> (0m2.02s).
+I, [2018-08-01T06:46:57.482062 #7724]  INFO -- default-centos-67: -----> Converging <default-centos-67>...
+I, [2018-08-01T06:46:57.484502 #7724]  INFO -- default-centos-67: Preparing files for transfer
+I, [2018-08-01T06:46:57.484829 #7724]  INFO -- default-centos-67: Preparing dna.json
+I, [2018-08-01T06:46:57.485692 #7724]  INFO -- default-centos-67: Resolving cookbook dependencies with Berkshelf 6.2.0...
+I, [2018-08-01T06:47:03.243516 #7724]  INFO -- default-centos-67: Removing non-cookbook files before transfer
+I, [2018-08-01T06:47:03.247705 #7724]  INFO -- default-centos-67: Preparing validation.pem
+I, [2018-08-01T06:47:03.249743 #7724]  INFO -- default-centos-67: Preparing client.rb
+I, [2018-08-01T06:47:04.220387 #7724]  INFO -- default-centos-67: -----> Installing Chef Omnibus (install only if missing)
+I, [2018-08-01T06:47:04.407693 #7724]  INFO -- default-centos-67: Downloading https://omnitruck.chef.io/install.sh to file /tmp/install.sh
+I, [2018-08-01T06:47:04.410114 #7724]  INFO -- default-centos-67: Trying curl...
+I, [2018-08-01T06:47:06.502321 #7724]  INFO -- default-centos-67: Download complete.
+I, [2018-08-01T06:47:07.539798 #7724]  INFO -- default-centos-67: el 6 x86_64
+I, [2018-08-01T06:47:07.539955 #7724]  INFO -- default-centos-67: Getting information for chef stable  for el...
+I, [2018-08-01T06:47:07.540020 #7724]  INFO -- default-centos-67: downloading https://omnitruck.chef.io/stable/chef/metadata?v=&p=el&pv=6&m=x86_64
+I, [2018-08-01T06:47:07.540080 #7724]  INFO -- default-centos-67:   to file /tmp/install.sh.36/metadata.txt
+I, [2018-08-01T06:47:07.540138 #7724]  INFO -- default-centos-67: trying curl...
+I, [2018-08-01T06:47:08.821439 #7724]  INFO -- default-centos-67: sha1	781573ce048d7bde8b94403fad00ffee8fb87bcb
+I, [2018-08-01T06:47:08.821597 #7724]  INFO -- default-centos-67: sha256	afbe87df432e6b7c02dfda141c38ba93c29ace11cbf5de03e505b5cb902fc6d1
+I, [2018-08-01T06:47:08.821676 #7724]  INFO -- default-centos-67: url	https://packages.chef.io/files/stable/chef/14.3.37/el/6/chef-14.3.37-1.el6.x86_64.rpm
+I, [2018-08-01T06:47:08.821738 #7724]  INFO -- default-centos-67: version	14.3.37
+I, [2018-08-01T06:47:08.892305 #7724]  INFO -- default-centos-67: downloaded metadata file looks valid...
+I, [2018-08-01T06:47:09.406489 #7724]  INFO -- default-centos-67: downloading https://packages.chef.io/files/stable/chef/14.3.37/el/6/chef-14.3.37-1.el6.x86_64.rpm
+I, [2018-08-01T06:47:09.406639 #7724]  INFO -- default-centos-67:   to file /tmp/install.sh.36/chef-14.3.37-1.el6.x86_64.rpm
+I, [2018-08-01T06:47:09.411104 #7724]  INFO -- default-centos-67: trying curl...
+I, [2018-08-01T06:47:50.677366 #7724]  INFO -- default-centos-67: Comparing checksum with sha256sum...
+I, [2018-08-01T06:47:57.215902 #7724]  INFO -- default-centos-67: 
+I, [2018-08-01T06:47:57.216066 #7724]  INFO -- default-centos-67: WARNING WARNING WARNING WARNING WARNING WARNING WARNING WARNING WARNING
+I, [2018-08-01T06:47:57.216133 #7724]  INFO -- default-centos-67: 
+I, [2018-08-01T06:47:57.216192 #7724]  INFO -- default-centos-67: You are installing an omnibus package without a version pin.  If you are installing
+I, [2018-08-01T06:47:57.216252 #7724]  INFO -- default-centos-67: on production servers via an automated process this is DANGEROUS and you will
+I, [2018-08-01T06:47:57.218246 #7724]  INFO -- default-centos-67: be upgraded without warning on new releases, even to new major releases.
+I, [2018-08-01T06:47:57.218327 #7724]  INFO -- default-centos-67: Letting the version float is only appropriate in desktop, test, development or
+I, [2018-08-01T06:47:57.218439 #7724]  INFO -- default-centos-67: CI/CD environments.
+I, [2018-08-01T06:47:57.218510 #7724]  INFO -- default-centos-67: 
+I, [2018-08-01T06:47:57.218570 #7724]  INFO -- default-centos-67: WARNING WARNING WARNING WARNING WARNING WARNING WARNING WARNING WARNING
+I, [2018-08-01T06:47:57.218628 #7724]  INFO -- default-centos-67: 
+I, [2018-08-01T06:47:57.218683 #7724]  INFO -- default-centos-67: Installing chef 
+I, [2018-08-01T06:47:57.220132 #7724]  INFO -- default-centos-67: installing with rpm...
+I, [2018-08-01T06:47:58.850527 #7724]  INFO -- default-centos-67: warning: /tmp/install.sh.36/chef-14.3.37-1.el6.x86_64.rpm: Header V4 DSA/SHA1 Signature, key ID 83ef826a: NOKEY
+I, [2018-08-01T06:48:03.516111 #7724]  INFO -- default-centos-67: Preparing...                                                            (100%)#                                           (100%)##                                          (100%)###                                         (100%)####                                        (100%)#####                                       (100%)######                                      (100%)#######                                     (100%)########                                    (100%)#########                                   (100%)##########                                  (100%)###########                                 (100%)############                                (100%)#############                               (100%)##############                              (100%)###############                             (100%)################                            (100%)#################                           (100%)##################                          (100%)###################                         (100%)####################                        (100%)#####################                       (100%)######################                      (100%)#######################                     (100%)########################                    (100%)#########################                   (100%)##########################                  (100%)###########################                 (100%)############################                (100%)#############################               (100%)##############################              (100%)###############################             (100%)################################            (100%)#################################           (100%)##################################          (100%)###################################         (100%)####################################        (100%)#####################################       (100%)######################################      (100%)#######################################     (100%)########################################    (100%)#########################################   (100%)##########################################  (100%)########################################### (100%)########################################### [100%]
+I, [2018-08-01T06:48:58.634896 #7724]  INFO -- default-centos-67:    1:chef                                                               (  1%)#                                           (  3%)##                                          (  6%)###                                         (  8%)####                                        ( 10%)#####                                       ( 13%)######                                      ( 15%)#######                                     ( 17%)########                                    ( 19%)#########                                   ( 22%)##########                                  ( 24%)###########                                 ( 26%)############                                ( 28%)#############                               ( 31%)##############                              ( 33%)###############                             ( 35%)################                            ( 38%)#################                           ( 40%)##################                          ( 42%)###################                         ( 44%)####################                        ( 47%)#####################                       ( 49%)######################                      ( 51%)#######################                     ( 53%)########################                    ( 56%)#########################                   ( 58%)##########################                  ( 60%)###########################                 ( 63%)############################                ( 65%)#############################               ( 67%)##############################              ( 69%)###############################             ( 72%)################################            ( 74%)#################################           ( 76%)##################################          ( 78%)###################################         ( 81%)####################################        ( 83%)#####################################       ( 85%)######################################      ( 88%)#######################################     ( 90%)########################################    ( 92%)#########################################   ( 94%)##########################################  ( 97%)########################################### ( 99%)########################################### [100%]
+I, [2018-08-01T06:49:12.307552 #7724]  INFO -- default-centos-67: Thank you for installing Chef!
+I, [2018-08-01T06:49:14.420071 #7724]  INFO -- default-centos-67: Transferring files to <default-centos-67>
+I, [2018-08-01T06:49:44.067456 #7724]  INFO -- default-centos-67: Starting Chef Client, version 14.3.37
+I, [2018-08-01T06:49:47.637440 #7724]  INFO -- default-centos-67: Creating a new client identity for default-centos-67 using the validator key.
+I, [2018-08-01T06:49:47.878336 #7724]  INFO -- default-centos-67: resolving cookbooks for run list: ["apache::default"]
+I, [2018-08-01T06:49:47.924086 #7724]  INFO -- default-centos-67: Synchronizing Cookbooks:
+I, [2018-08-01T06:49:47.960084 #7724]  INFO -- default-centos-67:   - apache (0.3.1)
+I, [2018-08-01T06:49:47.960179 #7724]  INFO -- default-centos-67: Installing Cookbook Gems:
+I, [2018-08-01T06:49:47.966012 #7724]  INFO -- default-centos-67: Compiling Cookbooks...
+I, [2018-08-01T06:49:47.978998 #7724]  INFO -- default-centos-67: Converging 4 resources
+I, [2018-08-01T06:49:47.979084 #7724]  INFO -- default-centos-67: Recipe: apache::server
+I, [2018-08-01T06:50:27.416806 #7724]  INFO -- default-centos-67:   * yum_package[httpd] action install
+I, [2018-08-01T06:50:27.427111 #7724]  INFO -- default-centos-67:     - install version 0:2.2.15-69.el6.centos.x86_64 of package httpd
+I, [2018-08-01T06:50:28.465492 #7724]  INFO -- default-centos-67:   * template[/var/www/html/index.html] action create
+I, [2018-08-01T06:50:28.589380 #7724]  INFO -- default-centos-67:     - create new file /var/www/html/index.html
+I, [2018-08-01T06:50:28.591164 #7724]  INFO -- default-centos-67:     - update content in file /var/www/html/index.html from none to 21a589
+I, [2018-08-01T06:50:28.591250 #7724]  INFO -- default-centos-67:     --- /var/www/html/index.html	2018-08-01 06:50:28.463369243 +0000
+I, [2018-08-01T06:50:28.591316 #7724]  INFO -- default-centos-67:     +++ /var/www/html/.chef-index20180801-144-15uzpt6.html	2018-08-01 06:50:28.387366544 +0000
+I, [2018-08-01T06:50:28.591376 #7724]  INFO -- default-centos-67:     @@ -1 +1,4 @@
+I, [2018-08-01T06:50:28.591492 #7724]  INFO -- default-centos-67:     +<h1>Hello, world!</h1>
+I, [2018-08-01T06:50:28.591553 #7724]  INFO -- default-centos-67:     +<h2>ipaddress: 172.17.0.26</h2>
+I, [2018-08-01T06:50:29.871379 #7724]  INFO -- default-centos-67:     +<h2>hostname: f320b57a2098</h2>
+I, [2018-08-01T06:50:31.111674 #7724]  INFO -- default-centos-67:   * template[/etc/httpd/conf/httpd.conf] action create
+I, [2018-08-01T06:50:31.111812 #7724]  INFO -- default-centos-67:     - update content in file /etc/httpd/conf/httpd.conf from 05850f to fba778
+I, [2018-08-01T06:50:31.111881 #7724]  INFO -- default-centos-67:     --- /etc/httpd/conf/httpd.conf	2018-02-19 11:24:50.000000000 +0000
+I, [2018-08-01T06:50:31.111973 #7724]  INFO -- default-centos-67:     +++ /etc/httpd/conf/.chef-httpd20180801-144-alsscf.conf	2018-08-01 06:50:30.207363293 +0000
+I, [2018-08-01T06:50:31.223919 #7724]  INFO -- default-centos-67:     @@ -1,104 +1,11 @@
+I, [2018-08-01T06:50:31.227099 #7724]  INFO -- default-centos-67:     -#
+I, [2018-08-01T06:50:31.227183 #7724]  INFO -- default-centos-67:     -# This is the main Apache server configuration file.  It contains the
+I, [2018-08-01T06:50:31.227259 #7724]  INFO -- default-centos-67:     -# configuration directives that give the server its instructions.
+I, [2018-08-01T06:50:31.227372 #7724]  INFO -- default-centos-67:     -# See <URL:http://httpd.apache.org/docs/2.2/> for detailed information.
+I, [2018-08-01T06:50:31.227491 #7724]  INFO -- default-centos-67:     -# In particular, see
+I, [2018-08-01T06:50:31.227551 #7724]  INFO -- default-centos-67:     -# <URL:http://httpd.apache.org/docs/2.2/mod/directives.html>
+I, [2018-08-01T06:50:31.227610 #7724]  INFO -- default-centos-67:     -# for a discussion of each configuration directive.
+I, [2018-08-01T06:50:31.227667 #7724]  INFO -- default-centos-67:     -#
+I, [2018-08-01T06:50:31.233046 #7724]  INFO -- default-centos-67:     -#
+I, [2018-08-01T06:50:31.233138 #7724]  INFO -- default-centos-67:     -# Do NOT simply read the instructions in here without understanding
+I, [2018-08-01T06:50:31.233318 #7724]  INFO -- default-centos-67:     -# what they do.  They're here only as hints or reminders.  If you are unsure
+I, [2018-08-01T06:50:31.233441 #7724]  INFO -- default-centos-67:     -# consult the online docs. You have been warned.  
+I, [2018-08-01T06:50:31.233512 #7724]  INFO -- default-centos-67:     -#
+I, [2018-08-01T06:50:31.233571 #7724]  INFO -- default-centos-67:     -# The configuration directives are grouped into three basic sections:
+I, [2018-08-01T06:50:31.233631 #7724]  INFO -- default-centos-67:     -#  1. Directives that control the operation of the Apache server process as a
+I, [2018-08-01T06:50:31.233691 #7724]  INFO -- default-centos-67:     -#     whole (the 'global environment').
+I, [2018-08-01T06:50:31.233768 #7724]  INFO -- default-centos-67:     -#  2. Directives that define the parameters of the 'main' or 'default' server,
+I, [2018-08-01T06:50:31.233829 #7724]  INFO -- default-centos-67:     -#     which responds to requests that aren't handled by a virtual host.
+I, [2018-08-01T06:50:31.233888 #7724]  INFO -- default-centos-67:     -#     These directives also provide default values for the settings
+I, [2018-08-01T06:50:31.233953 #7724]  INFO -- default-centos-67:     -#     of all virtual hosts.
+I, [2018-08-01T06:50:31.462659 #7724]  INFO -- default-centos-67:     -#  3. Settings for virtual hosts, which allow Web requests to be sent to
+I, [2018-08-01T06:50:31.462732 #7724]  INFO -- default-centos-67:     -#     different IP addresses or hostnames and have them handled by the
+I, [2018-08-01T06:50:31.462794 #7724]  INFO -- default-centos-67:     -#     same Apache server process.
+I, [2018-08-01T06:50:31.462852 #7724]  INFO -- default-centos-67:     -#
+I, [2018-08-01T06:50:31.462909 #7724]  INFO -- default-centos-67:     -# Configuration and logfile names: If the filenames you specify for many
+I, [2018-08-01T06:50:31.462968 #7724]  INFO -- default-centos-67:     -# of the server's control files begin with "/" (or "drive:/" for Win32), the
+I, [2018-08-01T06:50:31.463025 #7724]  INFO -- default-centos-67:     -# server will use that explicit path.  If the filenames do *not* begin
+I, [2018-08-01T06:50:31.464726 #7724]  INFO -- default-centos-67:     -# with "/", the value of ServerRoot is prepended -- so "logs/foo.log"
+I, [2018-08-01T06:50:31.464805 #7724]  INFO -- default-centos-67:     -# with ServerRoot set to "/etc/httpd" will be interpreted by the
+I, [2018-08-01T06:50:31.464867 #7724]  INFO -- default-centos-67:     -# server as "/etc/httpd/logs/foo.log".
+I, [2018-08-01T06:50:31.464924 #7724]  INFO -- default-centos-67:     -#
+I, [2018-08-01T06:50:31.464978 #7724]  INFO -- default-centos-67:     -
+I, [2018-08-01T06:50:31.465034 #7724]  INFO -- default-centos-67:     -### Section 1: Global Environment
+I, [2018-08-01T06:50:31.465088 #7724]  INFO -- default-centos-67:     -#
+I, [2018-08-01T06:50:31.465145 #7724]  INFO -- default-centos-67:     -# The directives in this section affect the overall operation of Apache,
+I, [2018-08-01T06:50:31.465874 #7724]  INFO -- default-centos-67:     -# such as the number of concurrent requests it can handle or where it
+I, [2018-08-01T06:50:31.466204 #7724]  INFO -- default-centos-67:     -# can find its configuration files.
+I, [2018-08-01T06:50:31.466274 #7724]  INFO -- default-centos-67:     -#
+I, [2018-08-01T06:50:31.466331 #7724]  INFO -- default-centos-67:     -
+I, [2018-08-01T06:50:31.466385 #7724]  INFO -- default-centos-67:     -#
+I, [2018-08-01T06:50:31.466679 #7724]  INFO -- default-centos-67:     -# Don't give away too much information about all the subcomponents
+I, [2018-08-01T06:50:31.466743 #7724]  INFO -- default-centos-67:     -# we are running.  Comment out this line if you don't mind remote sites
+I, [2018-08-01T06:50:31.466801 #7724]  INFO -- default-centos-67:     -# finding out what major optional modules you are running
+I, [2018-08-01T06:50:31.466859 #7724]  INFO -- default-centos-67:      ServerTokens OS
+I, [2018-08-01T06:50:31.466914 #7724]  INFO -- default-centos-67:     -
+I, [2018-08-01T06:50:31.466968 #7724]  INFO -- default-centos-67:     -#
+I, [2018-08-01T06:50:31.467024 #7724]  INFO -- default-centos-67:     -# ServerRoot: The top of the directory tree under which the server's
+I, [2018-08-01T06:50:31.467080 #7724]  INFO -- default-centos-67:     -# configuration, error, and log files are kept.
+I, [2018-08-01T06:50:31.467966 #7724]  INFO -- default-centos-67:     -#
+I, [2018-08-01T06:50:31.468042 #7724]  INFO -- default-centos-67:     -# NOTE!  If you intend to place this on an NFS (or otherwise network)
+I, [2018-08-01T06:50:31.468104 #7724]  INFO -- default-centos-67:     -# mounted filesystem then please read the LockFile documentation
+I, [2018-08-01T06:50:31.468163 #7724]  INFO -- default-centos-67:     -# (available at <URL:http://httpd.apache.org/docs/2.2/mod/mpm_common.html#lockfile>);
+I, [2018-08-01T06:50:31.468239 #7724]  INFO -- default-centos-67:     -# you will save yourself a lot of trouble.
+I, [2018-08-01T06:50:31.468298 #7724]  INFO -- default-centos-67:     -#
+I, [2018-08-01T06:50:31.468355 #7724]  INFO -- default-centos-67:     -# Do NOT add a slash at the end of the directory path.
+I, [2018-08-01T06:50:31.468602 #7724]  INFO -- default-centos-67:     -#
+I, [2018-08-01T06:50:31.468704 #7724]  INFO -- default-centos-67:      ServerRoot "/etc/httpd"
+I, [2018-08-01T06:50:31.468762 #7724]  INFO -- default-centos-67:     -
+I, [2018-08-01T06:50:31.469291 #7724]  INFO -- default-centos-67:     -#
+I, [2018-08-01T06:50:31.469364 #7724]  INFO -- default-centos-67:     -# PidFile: The file in which the server should record its process
+I, [2018-08-01T06:50:31.469596 #7724]  INFO -- default-centos-67:     -# identification number when it starts.  Note the PIDFILE variable in
+I, [2018-08-01T06:50:31.469663 #7724]  INFO -- default-centos-67:     -# /etc/sysconfig/httpd must be set appropriately if this location is
+I, [2018-08-01T06:50:31.469721 #7724]  INFO -- default-centos-67:     -# changed.
+I, [2018-08-01T06:50:31.469776 #7724]  INFO -- default-centos-67:     -#
+I, [2018-08-01T06:50:31.469832 #7724]  INFO -- default-centos-67:      PidFile run/httpd.pid
+I, [2018-08-01T06:50:31.469887 #7724]  INFO -- default-centos-67:     -
+I, [2018-08-01T06:50:31.469976 #7724]  INFO -- default-centos-67:     -#
+I, [2018-08-01T06:50:31.470064 #7724]  INFO -- default-centos-67:     -# Timeout: The number of seconds before receives and sends time out.
+I, [2018-08-01T06:50:31.470826 #7724]  INFO -- default-centos-67:     -#
+I, [2018-08-01T06:50:31.470900 #7724]  INFO -- default-centos-67:      Timeout 60
+I, [2018-08-01T06:50:31.470957 #7724]  INFO -- default-centos-67:     -
+I, [2018-08-01T06:50:31.471013 #7724]  INFO -- default-centos-67:     -#
+I, [2018-08-01T06:50:31.471069 #7724]  INFO -- default-centos-67:     -# KeepAlive: Whether or not to allow persistent connections (more than
+I, [2018-08-01T06:50:31.471127 #7724]  INFO -- default-centos-67:     -# one request per connection). Set to "Off" to deactivate.
+I, [2018-08-01T06:50:31.471182 #7724]  INFO -- default-centos-67:     -#
+I, [2018-08-01T06:50:31.471240 #7724]  INFO -- default-centos-67:      KeepAlive Off
+I, [2018-08-01T06:50:31.471297 #7724]  INFO -- default-centos-67:     -
+I, [2018-08-01T06:50:31.471360 #7724]  INFO -- default-centos-67:     -#
+I, [2018-08-01T06:50:31.472094 #7724]  INFO -- default-centos-67:     -# MaxKeepAliveRequests: The maximum number of requests to allow
+I, [2018-08-01T06:50:31.472168 #7724]  INFO -- default-centos-67:     -# during a persistent connection. Set to 0 to allow an unlimited amount.
+I, [2018-08-01T06:50:31.472260 #7724]  INFO -- default-centos-67:     -# We recommend you leave this number high, for maximum performance.
+I, [2018-08-01T06:50:31.472318 #7724]  INFO -- default-centos-67:     -#
+I, [2018-08-01T06:50:31.472375 #7724]  INFO -- default-centos-67:      MaxKeepAliveRequests 100
+I, [2018-08-01T06:50:31.472602 #7724]  INFO -- default-centos-67:     -
+I, [2018-08-01T06:50:31.472662 #7724]  INFO -- default-centos-67:     -#
+I, [2018-08-01T06:50:31.472719 #7724]  INFO -- default-centos-67:     -# KeepAliveTimeout: Number of seconds to wait for the next request from the
+I, [2018-08-01T06:50:31.472776 #7724]  INFO -- default-centos-67:     -# same client on the same connection.
+I, [2018-08-01T06:50:31.473238 #7724]  INFO -- default-centos-67:     -#
+I, [2018-08-01T06:50:31.473309 #7724]  INFO -- default-centos-67:      KeepAliveTimeout 15
+I, [2018-08-01T06:50:31.473365 #7724]  INFO -- default-centos-67:      
+I, [2018-08-01T06:50:31.582775 #7724]  INFO -- default-centos-67:     -##
+I, [2018-08-01T06:50:31.582842 #7724]  INFO -- default-centos-67:     -## Server-Pool Size Regulation (MPM specific)
+I, [2018-08-01T06:50:31.582899 #7724]  INFO -- default-centos-67:     -## 
+I, [2018-08-01T06:50:31.582954 #7724]  INFO -- default-centos-67:     -
+I, [2018-08-01T06:50:31.583008 #7724]  INFO -- default-centos-67:     -# prefork MPM
+I, [2018-08-01T06:50:31.583085 #7724]  INFO -- default-centos-67:     -# StartServers: number of server processes to start
+I, [2018-08-01T06:50:31.583147 #7724]  INFO -- default-centos-67:     -# MinSpareServers: minimum number of server processes which are kept spare
+I, [2018-08-01T06:50:31.583204 #7724]  INFO -- default-centos-67:     -# MaxSpareServers: maximum number of server processes which are kept spare
+I, [2018-08-01T06:50:31.584117 #7724]  INFO -- default-centos-67:     -# ServerLimit: maximum value for MaxClients for the lifetime of the server
+I, [2018-08-01T06:50:31.584193 #7724]  INFO -- default-centos-67:     -# MaxClients: maximum number of server processes allowed to start
+I, [2018-08-01T06:50:31.584254 #7724]  INFO -- default-centos-67:     -# MaxRequestsPerChild: maximum number of requests a server process serves
+I, [2018-08-01T06:50:31.584313 #7724]  INFO -- default-centos-67:      <IfModule prefork.c>
+I, [2018-08-01T06:50:31.584370 #7724]  INFO -- default-centos-67:      StartServers       8
+I, [2018-08-01T06:50:31.584596 #7724]  INFO -- default-centos-67:      MinSpareServers    5
+I, [2018-08-01T06:50:31.584659 #7724]  INFO -- default-centos-67:     @@ -108,13 +15,6 @@
+I, [2018-08-01T06:50:31.585913 #7724]  INFO -- default-centos-67:      MaxRequestsPerChild  4000
+I, [2018-08-01T06:50:31.585988 #7724]  INFO -- default-centos-67:      </IfModule>
+I, [2018-08-01T06:50:31.586047 #7724]  INFO -- default-centos-67:      
+I, [2018-08-01T06:50:31.586104 #7724]  INFO -- default-centos-67:     -# worker MPM
+I, [2018-08-01T06:50:31.586164 #7724]  INFO -- default-centos-67:     -# StartServers: initial number of server processes to start
+I, [2018-08-01T06:50:31.586222 #7724]  INFO -- default-centos-67:     -# MaxClients: maximum number of simultaneous client connections
+I, [2018-08-01T06:50:31.586280 #7724]  INFO -- default-centos-67:     -# MinSpareThreads: minimum number of worker threads which are kept spare
+I, [2018-08-01T06:50:31.589117 #7724]  INFO -- default-centos-67:     -# MaxSpareThreads: maximum number of worker threads which are kept spare
+I, [2018-08-01T06:50:31.589221 #7724]  INFO -- default-centos-67:     -# ThreadsPerChild: constant number of worker threads in each server process
+I, [2018-08-01T06:50:31.589486 #7724]  INFO -- default-centos-67:     -# MaxRequestsPerChild: maximum number of requests a server process serves
+I, [2018-08-01T06:50:31.589559 #7724]  INFO -- default-centos-67:      <IfModule worker.c>
+I, [2018-08-01T06:50:31.589618 #7724]  INFO -- default-centos-67:      StartServers         4
+I, [2018-08-01T06:50:31.589677 #7724]  INFO -- default-centos-67:      MaxClients         300
+I, [2018-08-01T06:50:31.589732 #7724]  INFO -- default-centos-67:     @@ -124,29 +24,8 @@
+I, [2018-08-01T06:50:31.589788 #7724]  INFO -- default-centos-67:      MaxRequestsPerChild  0
+I, [2018-08-01T06:50:31.589843 #7724]  INFO -- default-centos-67:      </IfModule>
+I, [2018-08-01T06:50:31.589898 #7724]  INFO -- default-centos-67:      
+I, [2018-08-01T06:50:31.592069 #7724]  INFO -- default-centos-67:     -#
+I, [2018-08-01T06:50:31.704352 #7724]  INFO -- default-centos-67:     -# Listen: Allows you to bind Apache to specific IP addresses and/or
+I, [2018-08-01T06:50:31.704653 #7724]  INFO -- default-centos-67:     -# ports, in addition to the default. See also the <VirtualHost>
+I, [2018-08-01T06:50:31.704723 #7724]  INFO -- default-centos-67:     -# directive.
+I, [2018-08-01T06:50:31.704782 #7724]  INFO -- default-centos-67:     -#
+I, [2018-08-01T06:50:31.704840 #7724]  INFO -- default-centos-67:     -# Change this to Listen on specific IP addresses as shown below to 
+I, [2018-08-01T06:50:31.704899 #7724]  INFO -- default-centos-67:     -# prevent Apache from glomming onto all bound IP addresses (0.0.0.0)
+I, [2018-08-01T06:50:31.704956 #7724]  INFO -- default-centos-67:     -#
+I, [2018-08-01T06:50:31.705011 #7724]  INFO -- default-centos-67:     -#Listen 12.34.56.78:80
+I, [2018-08-01T06:50:31.705067 #7724]  INFO -- default-centos-67:     -Listen 80
+I, [2018-08-01T06:50:31.705142 #7724]  INFO -- default-centos-67:     +Listen 8080
+I, [2018-08-01T06:50:31.707176 #7724]  INFO -- default-centos-67:      
+I, [2018-08-01T06:50:31.707254 #7724]  INFO -- default-centos-67:     -#
+I, [2018-08-01T06:50:31.707315 #7724]  INFO -- default-centos-67:     -# Dynamic Shared Object (DSO) Support
+I, [2018-08-01T06:50:31.707376 #7724]  INFO -- default-centos-67:     -#
+I, [2018-08-01T06:50:31.707496 #7724]  INFO -- default-centos-67:     -# To be able to use the functionality of a module which was built as a DSO you
+I, [2018-08-01T06:50:31.707558 #7724]  INFO -- default-centos-67:     -# have to place corresponding `LoadModule' lines at this location so the
+I, [2018-08-01T06:50:31.707616 #7724]  INFO -- default-centos-67:     -# directives contained in it are actually available _before_ they are used.
+I, [2018-08-01T06:50:31.707751 #7724]  INFO -- default-centos-67:     -# Statically compiled modules (those listed by `httpd -l') do not need
+I, [2018-08-01T06:50:31.707820 #7724]  INFO -- default-centos-67:     -# to be loaded here.
+I, [2018-08-01T06:50:31.710032 #7724]  INFO -- default-centos-67:     -#
+I, [2018-08-01T06:50:31.710109 #7724]  INFO -- default-centos-67:     -# Example:
+I, [2018-08-01T06:50:31.710169 #7724]  INFO -- default-centos-67:     -# LoadModule foo_module modules/mod_foo.so
+I, [2018-08-01T06:50:31.710225 #7724]  INFO -- default-centos-67:     -#
+I, [2018-08-01T06:50:31.710281 #7724]  INFO -- default-centos-67:      LoadModule auth_basic_module modules/mod_auth_basic.so
+I, [2018-08-01T06:50:31.710376 #7724]  INFO -- default-centos-67:      LoadModule auth_digest_module modules/mod_auth_digest.so
+I, [2018-08-01T06:50:31.710495 #7724]  INFO -- default-centos-67:      LoadModule authn_file_module modules/mod_authn_file.so
+I, [2018-08-01T06:50:31.710555 #7724]  INFO -- default-centos-67:     @@ -200,354 +79,56 @@
+I, [2018-08-01T06:50:31.710612 #7724]  INFO -- default-centos-67:      LoadModule cgi_module modules/mod_cgi.so
+I, [2018-08-01T06:50:31.710668 #7724]  INFO -- default-centos-67:      LoadModule version_module modules/mod_version.so
+I, [2018-08-01T06:50:31.710724 #7724]  INFO -- default-centos-67:      
+I, [2018-08-01T06:50:31.710779 #7724]  INFO -- default-centos-67:     -#
+I, [2018-08-01T06:50:31.710835 #7724]  INFO -- default-centos-67:     -# The following modules are not loaded by default:
+I, [2018-08-01T06:50:31.710891 #7724]  INFO -- default-centos-67:     -#
+I, [2018-08-01T06:50:31.710947 #7724]  INFO -- default-centos-67:     -#LoadModule asis_module modules/mod_asis.so
+I, [2018-08-01T06:50:31.711003 #7724]  INFO -- default-centos-67:     -#LoadModule authn_dbd_module modules/mod_authn_dbd.so
+I, [2018-08-01T06:50:31.714103 #7724]  INFO -- default-centos-67:     -#LoadModule cern_meta_module modules/mod_cern_meta.so
+I, [2018-08-01T06:50:31.714183 #7724]  INFO -- default-centos-67:     -#LoadModule cgid_module modules/mod_cgid.so
+I, [2018-08-01T06:50:31.714244 #7724]  INFO -- default-centos-67:     -#LoadModule dbd_module modules/mod_dbd.so
+I, [2018-08-01T06:50:31.942821 #7724]  INFO -- default-centos-67:     -#LoadModule dumpio_module modules/mod_dumpio.so
+I, [2018-08-01T06:50:31.942956 #7724]  INFO -- default-centos-67:     -#LoadModule filter_module modules/mod_filter.so
+I, [2018-08-01T06:50:31.943069 #7724]  INFO -- default-centos-67:     -#LoadModule ident_module modules/mod_ident.so
+I, [2018-08-01T06:50:31.943135 #7724]  INFO -- default-centos-67:     -#LoadModule log_forensic_module modules/mod_log_forensic.so
+I, [2018-08-01T06:50:31.943205 #7724]  INFO -- default-centos-67:     -#LoadModule unique_id_module modules/mod_unique_id.so
+I, [2018-08-01T06:50:31.943264 #7724]  INFO -- default-centos-67:     -#
+I, [2018-08-01T06:50:31.943321 #7724]  INFO -- default-centos-67:     -
+I, [2018-08-01T06:50:31.943526 #7724]  INFO -- default-centos-67:     -#
+I, [2018-08-01T06:50:31.943589 #7724]  INFO -- default-centos-67:     -# Load config files from the config directory "/etc/httpd/conf.d".
+I, [2018-08-01T06:50:31.943647 #7724]  INFO -- default-centos-67:     -#
+I, [2018-08-01T06:50:31.943730 #7724]  INFO -- default-centos-67:      Include conf.d/*.conf
+I, [2018-08-01T06:50:31.943789 #7724]  INFO -- default-centos-67:     -
+I, [2018-08-01T06:50:31.943844 #7724]  INFO -- default-centos-67:     -#
+I, [2018-08-01T06:50:31.943900 #7724]  INFO -- default-centos-67:     -# ExtendedStatus controls whether Apache will generate "full" status
+I, [2018-08-01T06:50:31.945677 #7724]  INFO -- default-centos-67:     -# information (ExtendedStatus On) or just basic information (ExtendedStatus
+I, [2018-08-01T06:50:31.945930 #7724]  INFO -- default-centos-67:     -# Off) when the "server-status" handler is called. The default is Off.
+I, [2018-08-01T06:50:31.946003 #7724]  INFO -- default-centos-67:     -#
+I, [2018-08-01T06:50:31.946061 #7724]  INFO -- default-centos-67:     -#ExtendedStatus On
+I, [2018-08-01T06:50:31.946116 #7724]  INFO -- default-centos-67:     -
+I, [2018-08-01T06:50:31.946172 #7724]  INFO -- default-centos-67:     -#
+I, [2018-08-01T06:50:31.946227 #7724]  INFO -- default-centos-67:     -# If you wish httpd to run as a different user or group, you must run
+I, [2018-08-01T06:50:31.946284 #7724]  INFO -- default-centos-67:     -# httpd as root initially and it will switch.  
+I, [2018-08-01T06:50:31.946966 #7724]  INFO -- default-centos-67:     -#
+I, [2018-08-01T06:50:31.947042 #7724]  INFO -- default-centos-67:     -# User/Group: The name (or #number) of the user/group to run httpd as.
+I, [2018-08-01T06:50:31.947102 #7724]  INFO -- default-centos-67:     -#  . On SCO (ODT 3) use "User nouser" and "Group nogroup".
+I, [2018-08-01T06:50:31.947167 #7724]  INFO -- default-centos-67:     -#  . On HPUX you may not be able to use shared memory as nobody, and the
+I, [2018-08-01T06:50:31.947228 #7724]  INFO -- default-centos-67:     -#    suggested workaround is to create a user www and use that user.
+I, [2018-08-01T06:50:31.947286 #7724]  INFO -- default-centos-67:     -#  NOTE that some kernels refuse to setgid(Group) or semctl(IPC_SET)
+I, [2018-08-01T06:50:31.947344 #7724]  INFO -- default-centos-67:     -#  when the value of (unsigned)Group is above 60000; 
+I, [2018-08-01T06:50:31.947588 #7724]  INFO -- default-centos-67:     -#  don't use Group #-1 on these systems!
+I, [2018-08-01T06:50:31.947769 #7724]  INFO -- default-centos-67:     -#
+I, [2018-08-01T06:50:31.947838 #7724]  INFO -- default-centos-67:      User apache
+I, [2018-08-01T06:50:31.948351 #7724]  INFO -- default-centos-67:      Group apache
+I, [2018-08-01T06:50:31.948616 #7724]  INFO -- default-centos-67:     -
+I, [2018-08-01T06:50:31.948718 #7724]  INFO -- default-centos-67:     -### Section 2: 'Main' server configuration
+I, [2018-08-01T06:50:31.948775 #7724]  INFO -- default-centos-67:     -#
+I, [2018-08-01T06:50:31.948831 #7724]  INFO -- default-centos-67:     -# The directives in this section set up the values used by the 'main'
+I, [2018-08-01T06:50:31.948888 #7724]  INFO -- default-centos-67:     -# server, which responds to any requests that aren't handled by a
+I, [2018-08-01T06:50:31.948947 #7724]  INFO -- default-centos-67:     -# <VirtualHost> definition.  These values also provide defaults for
+I, [2018-08-01T06:50:31.949004 #7724]  INFO -- default-centos-67:     -# any <VirtualHost> containers you may define later in the file.
+I, [2018-08-01T06:50:31.949060 #7724]  INFO -- default-centos-67:     -#
+I, [2018-08-01T06:50:31.949995 #7724]  INFO -- default-centos-67:     -# All of these directives may appear inside <VirtualHost> containers,
+I, [2018-08-01T06:50:31.950072 #7724]  INFO -- default-centos-67:     -# in which case these default settings will be overridden for the
+I, [2018-08-01T06:50:31.950133 #7724]  INFO -- default-centos-67:     -# virtual host being defined.
+I, [2018-08-01T06:50:31.950188 #7724]  INFO -- default-centos-67:     -#
+I, [2018-08-01T06:50:31.950244 #7724]  INFO -- default-centos-67:     -
+I, [2018-08-01T06:50:31.950299 #7724]  INFO -- default-centos-67:     -#
+I, [2018-08-01T06:50:31.950356 #7724]  INFO -- default-centos-67:     -# ServerAdmin: Your address, where problems with the server should be
+I, [2018-08-01T06:50:31.950596 #7724]  INFO -- default-centos-67:     -# e-mailed.  This address appears on some server-generated pages, such
+I, [2018-08-01T06:50:31.950665 #7724]  INFO -- default-centos-67:     -# as error documents.  e.g. admin@your-domain.com
+I, [2018-08-01T06:50:31.950723 #7724]  INFO -- default-centos-67:     -#
+I, [2018-08-01T06:50:31.950778 #7724]  INFO -- default-centos-67:      ServerAdmin root@localhost
+I, [2018-08-01T06:50:31.950834 #7724]  INFO -- default-centos-67:     -
+I, [2018-08-01T06:50:31.950888 #7724]  INFO -- default-centos-67:     -#
+I, [2018-08-01T06:50:31.950944 #7724]  INFO -- default-centos-67:     -# ServerName gives the name and port that the server uses to identify itself.
+I, [2018-08-01T06:50:31.951839 #7724]  INFO -- default-centos-67:     -# This can often be determined automatically, but we recommend you specify
+I, [2018-08-01T06:50:31.951915 #7724]  INFO -- default-centos-67:     -# it explicitly to prevent problems during startup.
+I, [2018-08-01T06:50:31.951973 #7724]  INFO -- default-centos-67:     -#
+I, [2018-08-01T06:50:31.952030 #7724]  INFO -- default-centos-67:     -# If this is not set to valid DNS name for your host, server-generated
+I, [2018-08-01T06:50:31.952088 #7724]  INFO -- default-centos-67:     -# redirections will not work.  See also the UseCanonicalName directive.
+I, [2018-08-01T06:50:31.952144 #7724]  INFO -- default-centos-67:     -#
+I, [2018-08-01T06:50:31.952201 #7724]  INFO -- default-centos-67:     -# If your host doesn't have a registered DNS name, enter its IP address here.
+I, [2018-08-01T06:50:31.952259 #7724]  INFO -- default-centos-67:     -# You will have to access it by its address anyway, and this will make 
+I, [2018-08-01T06:50:31.952317 #7724]  INFO -- default-centos-67:     -# redirections work in a sensible way.
+I, [2018-08-01T06:50:31.952990 #7724]  INFO -- default-centos-67:     -#
+I, [2018-08-01T06:50:31.953065 #7724]  INFO -- default-centos-67:     -#ServerName www.example.com:80
+I, [2018-08-01T06:50:31.953123 #7724]  INFO -- default-centos-67:     -
+I, [2018-08-01T06:50:31.953212 #7724]  INFO -- default-centos-67:     -#
+I, [2018-08-01T06:50:32.062645 #7724]  INFO -- default-centos-67:     -# UseCanonicalName: Determines how Apache constructs self-referencing 
+I, [2018-08-01T06:50:32.062795 #7724]  INFO -- default-centos-67:     -# URLs and the SERVER_NAME and SERVER_PORT variables.
+I, [2018-08-01T06:50:32.062862 #7724]  INFO -- default-centos-67:     -# When set "Off", Apache will use the Hostname and Port supplied
+I, [2018-08-01T06:50:32.062923 #7724]  INFO -- default-centos-67:     -# by the client.  When set "On", Apache will use the value of the
+I, [2018-08-01T06:50:32.062980 #7724]  INFO -- default-centos-67:     -# ServerName directive.
+I, [2018-08-01T06:50:32.063713 #7724]  INFO -- default-centos-67:     -#
+I, [2018-08-01T06:50:32.063788 #7724]  INFO -- default-centos-67:      UseCanonicalName Off
+I, [2018-08-01T06:50:32.064074 #7724]  INFO -- default-centos-67:     -
+I, [2018-08-01T06:50:32.064144 #7724]  INFO -- default-centos-67:     -#
+I, [2018-08-01T06:50:32.064202 #7724]  INFO -- default-centos-67:     -# DocumentRoot: The directory out of which you will serve your
+I, [2018-08-01T06:50:32.064260 #7724]  INFO -- default-centos-67:     -# documents. By default, all requests are taken from this directory, but
+I, [2018-08-01T06:50:32.064318 #7724]  INFO -- default-centos-67:     -# symbolic links and aliases may be used to point to other locations.
+I, [2018-08-01T06:50:32.064542 #7724]  INFO -- default-centos-67:     -#
+I, [2018-08-01T06:50:32.064709 #7724]  INFO -- default-centos-67:      DocumentRoot "/var/www/html"
+I, [2018-08-01T06:50:32.064778 #7724]  INFO -- default-centos-67:      
+I, [2018-08-01T06:50:32.064834 #7724]  INFO -- default-centos-67:     -#
+I, [2018-08-01T06:50:32.064891 #7724]  INFO -- default-centos-67:     -# Each directory to which Apache has access can be configured with respect
+I, [2018-08-01T06:50:32.064949 #7724]  INFO -- default-centos-67:     -# to which services and features are allowed and/or disabled in that
+I, [2018-08-01T06:50:32.065023 #7724]  INFO -- default-centos-67:     -# directory (and its subdirectories). 
+I, [2018-08-01T06:50:32.065081 #7724]  INFO -- default-centos-67:     -#
+I, [2018-08-01T06:50:32.065136 #7724]  INFO -- default-centos-67:     -# First, we configure the "default" to be a very restrictive set of 
+I, [2018-08-01T06:50:32.065962 #7724]  INFO -- default-centos-67:     -# features.  
+I, [2018-08-01T06:50:32.066034 #7724]  INFO -- default-centos-67:     -#
+I, [2018-08-01T06:50:32.066092 #7724]  INFO -- default-centos-67:      <Directory />
+I, [2018-08-01T06:50:32.066176 #7724]  INFO -- default-centos-67:   Options FollowSymLinks
+I, [2018-08-01T06:50:32.066248 #7724]  INFO -- default-centos-67:   AllowOverride None
+I, [2018-08-01T06:50:32.066380 #7724]  INFO -- default-centos-67:      </Directory>
+I, [2018-08-01T06:50:32.066615 #7724]  INFO -- default-centos-67:      
+I, [2018-08-01T06:50:32.066674 #7724]  INFO -- default-centos-67:     -#
+I, [2018-08-01T06:50:32.066730 #7724]  INFO -- default-centos-67:     -# Note that from this point forward you must specifically allow
+I, [2018-08-01T06:50:32.066788 #7724]  INFO -- default-centos-67:     -# particular features to be enabled - so if something's not working as
+I, [2018-08-01T06:50:32.067333 #7724]  INFO -- default-centos-67:     -# you might expect, make sure that you have specifically enabled it
+I, [2018-08-01T06:50:32.067567 #7724]  INFO -- default-centos-67:     -# below.
+I, [2018-08-01T06:50:32.067638 #7724]  INFO -- default-centos-67:     -#
+I, [2018-08-01T06:50:32.067694 #7724]  INFO -- default-centos-67:     -
+I, [2018-08-01T06:50:32.067749 #7724]  INFO -- default-centos-67:     -#
+I, [2018-08-01T06:50:32.067805 #7724]  INFO -- default-centos-67:     -# This should be changed to whatever you set DocumentRoot to.
+I, [2018-08-01T06:50:32.067861 #7724]  INFO -- default-centos-67:     -#
+I, [2018-08-01T06:50:32.067916 #7724]  INFO -- default-centos-67:      <Directory "/var/www/html">
+I, [2018-08-01T06:50:32.067971 #7724]  INFO -- default-centos-67:     -
+I, [2018-08-01T06:50:32.068026 #7724]  INFO -- default-centos-67:     -#
+I, [2018-08-01T06:50:32.068081 #7724]  INFO -- default-centos-67:     -# Possible values for the Options directive are "None", "All",
+I, [2018-08-01T06:50:32.068879 #7724]  INFO -- default-centos-67:     -# or any combination of:
+I, [2018-08-01T06:50:32.068954 #7724]  INFO -- default-centos-67:     -#   Indexes Includes FollowSymLinks SymLinksifOwnerMatch ExecCGI MultiViews
+I, [2018-08-01T06:50:32.069014 #7724]  INFO -- default-centos-67:     -#
+I, [2018-08-01T06:50:32.069071 #7724]  INFO -- default-centos-67:     -# Note that "MultiViews" must be named *explicitly* --- "Options All"
+I, [2018-08-01T06:50:32.069129 #7724]  INFO -- default-centos-67:     -# doesn't give it to you.
+I, [2018-08-01T06:50:32.069211 #7724]  INFO -- default-centos-67:     -#
+I, [2018-08-01T06:50:32.069304 #7724]  INFO -- default-centos-67:     -# The Options directive is both complicated and important.  Please see
+I, [2018-08-01T06:50:32.070072 #7724]  INFO -- default-centos-67:     -# http://httpd.apache.org/docs/2.2/mod/core.html#options
+I, [2018-08-01T06:50:32.070147 #7724]  INFO -- default-centos-67:     -# for more information.
+I, [2018-08-01T06:50:32.070206 #7724]  INFO -- default-centos-67:     -#
+I, [2018-08-01T06:50:32.070274 #7724]  INFO -- default-centos-67:   Options Indexes FollowSymLinks
+I, [2018-08-01T06:50:32.070333 #7724]  INFO -- default-centos-67:     -
+I, [2018-08-01T06:50:32.070439 #7724]  INFO -- default-centos-67:     -#
+I, [2018-08-01T06:50:32.070621 #7724]  INFO -- default-centos-67:     -# AllowOverride controls what directives may be placed in .htaccess files.
+I, [2018-08-01T06:50:32.070681 #7724]  INFO -- default-centos-67:     -# It can be "All", "None", or any combination of the keywords:
+I, [2018-08-01T06:50:32.070740 #7724]  INFO -- default-centos-67:     -#   Options FileInfo AuthConfig Limit
+I, [2018-08-01T06:50:32.070795 #7724]  INFO -- default-centos-67:     -#
+I, [2018-08-01T06:50:32.070862 #7724]  INFO -- default-centos-67:   AllowOverride None
+I, [2018-08-01T06:50:32.070933 #7724]  INFO -- default-centos-67:     -
+I, [2018-08-01T06:50:32.073139 #7724]  INFO -- default-centos-67:     -#
+I, [2018-08-01T06:50:32.073250 #7724]  INFO -- default-centos-67:     -# Controls who can get stuff from this server.
+I, [2018-08-01T06:50:32.073329 #7724]  INFO -- default-centos-67:     -#
+I, [2018-08-01T06:50:32.073452 #7724]  INFO -- default-centos-67:   Order allow,deny
+I, [2018-08-01T06:50:32.073531 #7724]  INFO -- default-centos-67:   Allow from all
+I, [2018-08-01T06:50:32.073590 #7724]  INFO -- default-centos-67:     -
+I, [2018-08-01T06:50:32.184023 #7724]  INFO -- default-centos-67:      </Directory>
+I, [2018-08-01T06:50:32.184144 #7724]  INFO -- default-centos-67:      
+I, [2018-08-01T06:50:32.184205 #7724]  INFO -- default-centos-67:     -#
+I, [2018-08-01T06:50:32.184263 #7724]  INFO -- default-centos-67:     -# UserDir: The name of the directory that is appended onto a user's home
+I, [2018-08-01T06:50:32.184321 #7724]  INFO -- default-centos-67:     -# directory if a ~user request is received.
+I, [2018-08-01T06:50:32.184376 #7724]  INFO -- default-centos-67:     -#
+I, [2018-08-01T06:50:32.184495 #7724]  INFO -- default-centos-67:     -# The path to the end user account 'public_html' directory must be
+I, [2018-08-01T06:50:32.184557 #7724]  INFO -- default-centos-67:     -# accessible to the webserver userid.  This usually means that ~userid
+I, [2018-08-01T06:50:32.184617 #7724]  INFO -- default-centos-67:     -# must have permissions of 711, ~userid/public_html must have permissions
+I, [2018-08-01T06:50:32.184676 #7724]  INFO -- default-centos-67:     -# of 755, and documents contained therein must be world-readable.
+I, [2018-08-01T06:50:32.187033 #7724]  INFO -- default-centos-67:     -# Otherwise, the client will only receive a "403 Forbidden" message.
+I, [2018-08-01T06:50:32.187112 #7724]  INFO -- default-centos-67:     -#
+I, [2018-08-01T06:50:32.187173 #7724]  INFO -- default-centos-67:     -# See also: http://httpd.apache.org/docs/misc/FAQ.html#forbidden
+I, [2018-08-01T06:50:32.187231 #7724]  INFO -- default-centos-67:     -#
+I, [2018-08-01T06:50:32.187294 #7724]  INFO -- default-centos-67:      <IfModule mod_userdir.c>
+I, [2018-08-01T06:50:32.187353 #7724]  INFO -- default-centos-67:     -    #
+I, [2018-08-01T06:50:32.187411 #7724]  INFO -- default-centos-67:     -    # UserDir is disabled by default since it can confirm the presence
+I, [2018-08-01T06:50:32.187659 #7724]  INFO -- default-centos-67:     -    # of a username on the system (depending on home directory
+I, [2018-08-01T06:50:32.187728 #7724]  INFO -- default-centos-67:     -    # permissions).
+I, [2018-08-01T06:50:32.187786 #7724]  INFO -- default-centos-67:     -    #
+I, [2018-08-01T06:50:32.187862 #7724]  INFO -- default-centos-67:   UserDir disabled
+I, [2018-08-01T06:50:32.190261 #7724]  INFO -- default-centos-67:     -
+I, [2018-08-01T06:50:32.190337 #7724]  INFO -- default-centos-67:     -    #
+I, [2018-08-01T06:50:32.190466 #7724]  INFO -- default-centos-67:     -    # To enable requests to /~user/ to serve the user's public_html
+I, [2018-08-01T06:50:32.190537 #7724]  INFO -- default-centos-67:     -    # directory, remove the "UserDir disabled" line above, and uncomment
+I, [2018-08-01T06:50:32.190597 #7724]  INFO -- default-centos-67:     -    # the following line instead:
+I, [2018-08-01T06:50:32.190654 #7724]  INFO -- default-centos-67:     -    # 
+I, [2018-08-01T06:50:32.190709 #7724]  INFO -- default-centos-67:     -    #UserDir public_html
+I, [2018-08-01T06:50:32.190765 #7724]  INFO -- default-centos-67:     -
+I, [2018-08-01T06:50:32.190819 #7724]  INFO -- default-centos-67:      </IfModule>
+I, [2018-08-01T06:50:32.190873 #7724]  INFO -- default-centos-67:      
+I, [2018-08-01T06:50:32.190927 #7724]  INFO -- default-centos-67:     -#
+I, [2018-08-01T06:50:32.190982 #7724]  INFO -- default-centos-67:     -# Control access to UserDir directories.  The following is an example
+I, [2018-08-01T06:50:32.531333 #7724]  INFO -- default-centos-67:     -# for a site where these directories are restricted to read-only.
+I, [2018-08-01T06:50:32.531576 #7724]  INFO -- default-centos-67:     -#
+I, [2018-08-01T06:50:32.531644 #7724]  INFO -- default-centos-67:     -#<Directory /home/*/public_html>
+I, [2018-08-01T06:50:32.531705 #7724]  INFO -- default-centos-67:     -#    AllowOverride FileInfo AuthConfig Limit
+I, [2018-08-01T06:50:32.531764 #7724]  INFO -- default-centos-67:     -#    Options MultiViews Indexes SymLinksIfOwnerMatch IncludesNoExec
+I, [2018-08-01T06:50:32.531824 #7724]  INFO -- default-centos-67:     -#    <Limit GET POST OPTIONS>
+I, [2018-08-01T06:50:32.531883 #7724]  INFO -- default-centos-67:     -#        Order allow,deny
+I, [2018-08-01T06:50:32.531940 #7724]  INFO -- default-centos-67:     -#        Allow from all
+I, [2018-08-01T06:50:32.531996 #7724]  INFO -- default-centos-67:     -#    </Limit>
+I, [2018-08-01T06:50:32.532053 #7724]  INFO -- default-centos-67:     -#    <LimitExcept GET POST OPTIONS>
+I, [2018-08-01T06:50:32.532109 #7724]  INFO -- default-centos-67:     -#        Order deny,allow
+I, [2018-08-01T06:50:32.532167 #7724]  INFO -- default-centos-67:     -#        Deny from all
+I, [2018-08-01T06:50:32.532224 #7724]  INFO -- default-centos-67:     -#    </LimitExcept>
+I, [2018-08-01T06:50:32.532280 #7724]  INFO -- default-centos-67:     -#</Directory>
+I, [2018-08-01T06:50:32.532335 #7724]  INFO -- default-centos-67:     -
+I, [2018-08-01T06:50:32.532438 #7724]  INFO -- default-centos-67:     -#
+I, [2018-08-01T06:50:32.533669 #7724]  INFO -- default-centos-67:     -# DirectoryIndex: sets the file that Apache will serve if a directory
+I, [2018-08-01T06:50:32.533745 #7724]  INFO -- default-centos-67:     -# is requested.
+I, [2018-08-01T06:50:32.533840 #7724]  INFO -- default-centos-67:     -#
+I, [2018-08-01T06:50:32.533905 #7724]  INFO -- default-centos-67:     -# The index.html.var file (a type-map) is used to deliver content-
+I, [2018-08-01T06:50:32.533963 #7724]  INFO -- default-centos-67:     -# negotiated documents.  The MultiViews Option can be used for the 
+I, [2018-08-01T06:50:32.534020 #7724]  INFO -- default-centos-67:     -# same purpose, but it is much slower.
+I, [2018-08-01T06:50:32.534077 #7724]  INFO -- default-centos-67:     -#
+I, [2018-08-01T06:50:32.534132 #7724]  INFO -- default-centos-67:      DirectoryIndex index.html index.html.var
+I, [2018-08-01T06:50:32.534188 #7724]  INFO -- default-centos-67:     -
+I, [2018-08-01T06:50:32.534243 #7724]  INFO -- default-centos-67:     -#
+I, [2018-08-01T06:50:32.534302 #7724]  INFO -- default-centos-67:     -# AccessFileName: The name of the file to look for in each directory
+I, [2018-08-01T06:50:32.534362 #7724]  INFO -- default-centos-67:     -# for additional configuration directives.  See also the AllowOverride
+I, [2018-08-01T06:50:32.534480 #7724]  INFO -- default-centos-67:     -# directive.
+I, [2018-08-01T06:50:32.534541 #7724]  INFO -- default-centos-67:     -#
+I, [2018-08-01T06:50:32.534596 #7724]  INFO -- default-centos-67:      AccessFileName .htaccess
+I, [2018-08-01T06:50:32.534651 #7724]  INFO -- default-centos-67:      
+I, [2018-08-01T06:50:32.534706 #7724]  INFO -- default-centos-67:     -#
+I, [2018-08-01T06:50:32.534761 #7724]  INFO -- default-centos-67:     -# The following lines prevent .htaccess and .htpasswd files from being 
+I, [2018-08-01T06:50:32.534819 #7724]  INFO -- default-centos-67:     -# viewed by Web clients. 
+I, [2018-08-01T06:50:32.535851 #7724]  INFO -- default-centos-67:     -#
+I, [2018-08-01T06:50:32.535924 #7724]  INFO -- default-centos-67:      <Files ~ "^\.ht">
+I, [2018-08-01T06:50:32.536005 #7724]  INFO -- default-centos-67:   Order allow,deny
+I, [2018-08-01T06:50:32.536076 #7724]  INFO -- default-centos-67:   Deny from all
+I, [2018-08-01T06:50:32.536144 #7724]  INFO -- default-centos-67:   Satisfy All
+I, [2018-08-01T06:50:32.536203 #7724]  INFO -- default-centos-67:      </Files>
+I, [2018-08-01T06:50:32.536259 #7724]  INFO -- default-centos-67:      
+I, [2018-08-01T06:50:32.536313 #7724]  INFO -- default-centos-67:     -#
+I, [2018-08-01T06:50:32.536537 #7724]  INFO -- default-centos-67:     -# TypesConfig describes where the mime.types file (or equivalent) is
+I, [2018-08-01T06:50:32.536621 #7724]  INFO -- default-centos-67:     -# to be found.
+I, [2018-08-01T06:50:32.536680 #7724]  INFO -- default-centos-67:     -#
+I, [2018-08-01T06:50:32.536737 #7724]  INFO -- default-centos-67:      TypesConfig /etc/mime.types
+I, [2018-08-01T06:50:32.536791 #7724]  INFO -- default-centos-67:     -
+I, [2018-08-01T06:50:32.536846 #7724]  INFO -- default-centos-67:     -#
+I, [2018-08-01T06:50:32.536900 #7724]  INFO -- default-centos-67:     -# DefaultType is the default MIME type the server will use for a document
+I, [2018-08-01T06:50:32.537669 #7724]  INFO -- default-centos-67:     -# if it cannot otherwise determine one, such as from filename extensions.
+I, [2018-08-01T06:50:32.537743 #7724]  INFO -- default-centos-67:     -# If your server contains mostly text or HTML documents, "text/plain" is
+I, [2018-08-01T06:50:32.537803 #7724]  INFO -- default-centos-67:     -# a good value.  If most of your content is binary, such as applications
+I, [2018-08-01T06:50:32.537861 #7724]  INFO -- default-centos-67:     -# or images, you may want to use "application/octet-stream" instead to
+I, [2018-08-01T06:50:32.537995 #7724]  INFO -- default-centos-67:     -# keep browsers from trying to display binary files as though they are
+I, [2018-08-01T06:50:32.538058 #7724]  INFO -- default-centos-67:     -# text.
+I, [2018-08-01T06:50:32.538976 #7724]  INFO -- default-centos-67:     -#
+I, [2018-08-01T06:50:32.539051 #7724]  INFO -- default-centos-67:      DefaultType text/plain
+I, [2018-08-01T06:50:32.539125 #7724]  INFO -- default-centos-67:      
+I, [2018-08-01T06:50:32.539184 #7724]  INFO -- default-centos-67:     -#
+I, [2018-08-01T06:50:32.539241 #7724]  INFO -- default-centos-67:     -# The mod_mime_magic module allows the server to use various hints from the
+I, [2018-08-01T06:50:32.539299 #7724]  INFO -- default-centos-67:     -# contents of the file itself to determine its type.  The MIMEMagicFile
+I, [2018-08-01T06:50:32.539356 #7724]  INFO -- default-centos-67:     -# directive tells the module where the hint definitions are located.
+I, [2018-08-01T06:50:32.539464 #7724]  INFO -- default-centos-67:     -#
+I, [2018-08-01T06:50:32.539527 #7724]  INFO -- default-centos-67:      <IfModule mod_mime_magic.c>
+I, [2018-08-01T06:50:32.539584 #7724]  INFO -- default-centos-67:     -#   MIMEMagicFile /usr/share/magic.mime
+I, [2018-08-01T06:50:32.539653 #7724]  INFO -- default-centos-67:   MIMEMagicFile conf/magic
+I, [2018-08-01T06:50:32.539712 #7724]  INFO -- default-centos-67:      </IfModule>
+I, [2018-08-01T06:50:32.540388 #7724]  INFO -- default-centos-67:      
+I, [2018-08-01T06:50:32.540648 #7724]  INFO -- default-centos-67:     -#
+I, [2018-08-01T06:50:32.540744 #7724]  INFO -- default-centos-67:     -# HostnameLookups: Log the names of clients or just their IP addresses
+I, [2018-08-01T06:50:32.540805 #7724]  INFO -- default-centos-67:     -# e.g., www.apache.org (on) or 204.62.129.132 (off).
+I, [2018-08-01T06:50:32.540863 #7724]  INFO -- default-centos-67:     -# The default is off because it'd be overall better for the net if people
+I, [2018-08-01T06:50:32.540953 #7724]  INFO -- default-centos-67:     -# had to knowingly turn this feature on, since enabling it means that
+I, [2018-08-01T06:50:32.541011 #7724]  INFO -- default-centos-67:     -# each client request will result in AT LEAST one lookup request to the
+I, [2018-08-01T06:50:32.541067 #7724]  INFO -- default-centos-67:     -# nameserver.
+I, [2018-08-01T06:50:32.541847 #7724]  INFO -- default-centos-67:     -#
+I, [2018-08-01T06:50:32.541922 #7724]  INFO -- default-centos-67:      HostnameLookups Off
+I, [2018-08-01T06:50:32.541979 #7724]  INFO -- default-centos-67:      
+I, [2018-08-01T06:50:32.542127 #7724]  INFO -- default-centos-67:     -#
+I, [2018-08-01T06:50:32.542188 #7724]  INFO -- default-centos-67:     -# EnableMMAP: Control whether memory-mapping is used to deliver
+I, [2018-08-01T06:50:32.542245 #7724]  INFO -- default-centos-67:     -# files (assuming that the underlying OS supports it).
+I, [2018-08-01T06:50:32.542314 #7724]  INFO -- default-centos-67:     -# The default is on; turn this off if you serve from NFS-mounted 
+I, [2018-08-01T06:50:32.542373 #7724]  INFO -- default-centos-67:     -# filesystems.  On some systems, turning it off (regardless of
+I, [2018-08-01T06:50:32.542606 #7724]  INFO -- default-centos-67:     -# filesystem) can improve performance; for details, please see
+I, [2018-08-01T06:50:32.542670 #7724]  INFO -- default-centos-67:     -# http://httpd.apache.org/docs/2.2/mod/core.html#enablemmap
+I, [2018-08-01T06:50:32.542726 #7724]  INFO -- default-centos-67:     -#
+I, [2018-08-01T06:50:32.542780 #7724]  INFO -- default-centos-67:     -#EnableMMAP off
+I, [2018-08-01T06:50:32.772376 #7724]  INFO -- default-centos-67:     -
+I, [2018-08-01T06:50:32.772789 #7724]  INFO -- default-centos-67:     -#
+I, [2018-08-01T06:50:32.772856 #7724]  INFO -- default-centos-67:     -# EnableSendfile: Control whether the sendfile kernel support is 
+I, [2018-08-01T06:50:32.773319 #7724]  INFO -- default-centos-67:     -# used to deliver files (assuming that the OS supports it). 
+I, [2018-08-01T06:50:32.773585 #7724]  INFO -- default-centos-67:     -# The default is on; turn this off if you serve from NFS-mounted 
+I, [2018-08-01T06:50:32.773714 #7724]  INFO -- default-centos-67:     -# filesystems.  Please see
+I, [2018-08-01T06:50:32.773779 #7724]  INFO -- default-centos-67:     -# http://httpd.apache.org/docs/2.2/mod/core.html#enablesendfile
+I, [2018-08-01T06:50:32.773836 #7724]  INFO -- default-centos-67:     -#
+I, [2018-08-01T06:50:32.773893 #7724]  INFO -- default-centos-67:     -#EnableSendfile off
+I, [2018-08-01T06:50:32.773948 #7724]  INFO -- default-centos-67:     -
+I, [2018-08-01T06:50:32.774004 #7724]  INFO -- default-centos-67:     -#
+I, [2018-08-01T06:50:32.774060 #7724]  INFO -- default-centos-67:     -# ErrorLog: The location of the error log file.
+I, [2018-08-01T06:50:32.774116 #7724]  INFO -- default-centos-67:     -# If you do not specify an ErrorLog directive within a <VirtualHost>
+I, [2018-08-01T06:50:32.774174 #7724]  INFO -- default-centos-67:     -# container, error messages relating to that virtual host will be
+I, [2018-08-01T06:50:32.774232 #7724]  INFO -- default-centos-67:     -# logged here.  If you *do* define an error logfile for a <VirtualHost>
+I, [2018-08-01T06:50:32.774290 #7724]  INFO -- default-centos-67:     -# container, that host's errors will be logged there and not here.
+I, [2018-08-01T06:50:32.774346 #7724]  INFO -- default-centos-67:     -#
+I, [2018-08-01T06:50:32.774452 #7724]  INFO -- default-centos-67:      ErrorLog logs/error_log
+I, [2018-08-01T06:50:32.775229 #7724]  INFO -- default-centos-67:     -
+I, [2018-08-01T06:50:32.775299 #7724]  INFO -- default-centos-67:     -#
+I, [2018-08-01T06:50:32.775799 #7724]  INFO -- default-centos-67:     -# LogLevel: Control the number of messages logged to the error_log.
+I, [2018-08-01T06:50:32.775874 #7724]  INFO -- default-centos-67:     -# Possible values include: debug, info, notice, warn, error, crit,
+I, [2018-08-01T06:50:32.775951 #7724]  INFO -- default-centos-67:     -# alert, emerg.
+I, [2018-08-01T06:50:32.776011 #7724]  INFO -- default-centos-67:     -#
+I, [2018-08-01T06:50:32.776066 #7724]  INFO -- default-centos-67:      LogLevel warn
+I, [2018-08-01T06:50:32.776121 #7724]  INFO -- default-centos-67:     -
+I, [2018-08-01T06:50:32.776176 #7724]  INFO -- default-centos-67:     -#
+I, [2018-08-01T06:50:32.776233 #7724]  INFO -- default-centos-67:     -# The following directives define some format nicknames for use with
+I, [2018-08-01T06:50:32.776290 #7724]  INFO -- default-centos-67:     -# a CustomLog directive (see below).
+I, [2018-08-01T06:50:32.776346 #7724]  INFO -- default-centos-67:     -#
+I, [2018-08-01T06:50:32.776586 #7724]  INFO -- default-centos-67:      LogFormat "%h %l %u %t \"%r\" %>s %b \"%{Referer}i\" \"%{User-Agent}i\"" combined
+I, [2018-08-01T06:50:32.777274 #7724]  INFO -- default-centos-67:      LogFormat "%h %l %u %t \"%r\" %>s %b" common
+I, [2018-08-01T06:50:32.777361 #7724]  INFO -- default-centos-67:      LogFormat "%{Referer}i -> %U" referer
+I, [2018-08-01T06:50:32.777642 #7724]  INFO -- default-centos-67:      LogFormat "%{User-agent}i" agent
+I, [2018-08-01T06:50:32.777710 #7724]  INFO -- default-centos-67:      
+I, [2018-08-01T06:50:32.777768 #7724]  INFO -- default-centos-67:     -# "combinedio" includes actual counts of actual bytes received (%I) and sent (%O); this
+I, [2018-08-01T06:50:32.777841 #7724]  INFO -- default-centos-67:     -# requires the mod_logio module to be loaded.
+I, [2018-08-01T06:50:32.777900 #7724]  INFO -- default-centos-67:     -#LogFormat "%h %l %u %t \"%r\" %>s %b \"%{Referer}i\" \"%{User-Agent}i\" %I %O" combinedio
+I, [2018-08-01T06:50:32.777957 #7724]  INFO -- default-centos-67:     -
+I, [2018-08-01T06:50:32.778011 #7724]  INFO -- default-centos-67:     -#
+I, [2018-08-01T06:50:32.778788 #7724]  INFO -- default-centos-67:     -# The location and format of the access logfile (Common Logfile Format).
+I, [2018-08-01T06:50:32.778864 #7724]  INFO -- default-centos-67:     -# If you do not define any access logfiles within a <VirtualHost>
+I, [2018-08-01T06:50:32.778925 #7724]  INFO -- default-centos-67:     -# container, they will be logged here.  Contrariwise, if you *do*
+I, [2018-08-01T06:50:32.778983 #7724]  INFO -- default-centos-67:     -# define per-<VirtualHost> access logfiles, transactions will be
+I, [2018-08-01T06:50:32.779056 #7724]  INFO -- default-centos-67:     -# logged therein and *not* in this file.
+I, [2018-08-01T06:50:32.779115 #7724]  INFO -- default-centos-67:     -#
+I, [2018-08-01T06:50:32.779171 #7724]  INFO -- default-centos-67:     -#CustomLog logs/access_log common
+I, [2018-08-01T06:50:32.779226 #7724]  INFO -- default-centos-67:     -
+I, [2018-08-01T06:50:32.779280 #7724]  INFO -- default-centos-67:     -#
+I, [2018-08-01T06:50:32.779336 #7724]  INFO -- default-centos-67:     -# If you would like to have separate agent and referer logfiles, uncomment
+I, [2018-08-01T06:50:32.779567 #7724]  INFO -- default-centos-67:     -# the following directives.
+I, [2018-08-01T06:50:32.779673 #7724]  INFO -- default-centos-67:     -#
+I, [2018-08-01T06:50:32.779739 #7724]  INFO -- default-centos-67:     -#CustomLog logs/referer_log referer
+I, [2018-08-01T06:50:32.779796 #7724]  INFO -- default-centos-67:     -#CustomLog logs/agent_log agent
+I, [2018-08-01T06:50:32.779851 #7724]  INFO -- default-centos-67:     -
+I, [2018-08-01T06:50:32.780753 #7724]  INFO -- default-centos-67:     -#
+I, [2018-08-01T06:50:32.780826 #7724]  INFO -- default-centos-67:     -# For a single logfile with access, agent, and referer information
+I, [2018-08-01T06:50:32.781125 #7724]  INFO -- default-centos-67:     -# (Combined Logfile Format), use the following directive:
+I, [2018-08-01T06:50:32.781220 #7724]  INFO -- default-centos-67:     -#
+I, [2018-08-01T06:50:32.781300 #7724]  INFO -- default-centos-67:      CustomLog logs/access_log combined
+I, [2018-08-01T06:50:32.781358 #7724]  INFO -- default-centos-67:     -
+I, [2018-08-01T06:50:32.781573 #7724]  INFO -- default-centos-67:     -#
+I, [2018-08-01T06:50:32.781641 #7724]  INFO -- default-centos-67:     -# Optionally add a line containing the server version and virtual host
+I, [2018-08-01T06:50:32.781700 #7724]  INFO -- default-centos-67:     -# name to server-generated pages (internal error documents, FTP directory
+I, [2018-08-01T06:50:32.781757 #7724]  INFO -- default-centos-67:     -# listings, mod_status and mod_info output etc., but not CGI generated
+I, [2018-08-01T06:50:32.781814 #7724]  INFO -- default-centos-67:     -# documents or custom error documents).
+I, [2018-08-01T06:50:32.782375 #7724]  INFO -- default-centos-67:     -# Set to "EMail" to also include a mailto: link to the ServerAdmin.
+I, [2018-08-01T06:50:32.782617 #7724]  INFO -- default-centos-67:     -# Set to one of:  On | Off | EMail
+I, [2018-08-01T06:50:32.782677 #7724]  INFO -- default-centos-67:     -#
+I, [2018-08-01T06:50:32.782733 #7724]  INFO -- default-centos-67:      ServerSignature On
+I, [2018-08-01T06:50:32.782810 #7724]  INFO -- default-centos-67:     -
+I, [2018-08-01T06:50:32.782868 #7724]  INFO -- default-centos-67:     -#
+I, [2018-08-01T06:50:32.782925 #7724]  INFO -- default-centos-67:     -# Aliases: Add here as many aliases as you need (with no limit). The format is 
+I, [2018-08-01T06:50:33.011531 #7724]  INFO -- default-centos-67:     -# Alias fakename realname
+I, [2018-08-01T06:50:33.012836 #7724]  INFO -- default-centos-67:     -#
+I, [2018-08-01T06:50:33.012929 #7724]  INFO -- default-centos-67:     -# Note that if you include a trailing / on fakename then the server will
+I, [2018-08-01T06:50:33.012995 #7724]  INFO -- default-centos-67:     -# require it to be present in the URL.  So "/icons" isn't aliased in this
+I, [2018-08-01T06:50:33.013055 #7724]  INFO -- default-centos-67:     -# example, only "/icons/".  If the fakename is slash-terminated, then the 
+I, [2018-08-01T06:50:33.013116 #7724]  INFO -- default-centos-67:     -# realname must also be slash terminated, and if the fakename omits the 
+I, [2018-08-01T06:50:33.013213 #7724]  INFO -- default-centos-67:     -# trailing slash, the realname must also omit it.
+I, [2018-08-01T06:50:33.013282 #7724]  INFO -- default-centos-67:     -#
+I, [2018-08-01T06:50:33.013479 #7724]  INFO -- default-centos-67:     -# We include the /icons/ alias for FancyIndexed directory listings.  If you
+I, [2018-08-01T06:50:33.013556 #7724]  INFO -- default-centos-67:     -# do not use FancyIndexing, you may comment this out.
+I, [2018-08-01T06:50:33.013614 #7724]  INFO -- default-centos-67:     -#
+I, [2018-08-01T06:50:33.014121 #7724]  INFO -- default-centos-67:      Alias /icons/ "/var/www/icons/"
+I, [2018-08-01T06:50:33.014191 #7724]  INFO -- default-centos-67:      
+I, [2018-08-01T06:50:33.014248 #7724]  INFO -- default-centos-67:      <Directory "/var/www/icons">
+I, [2018-08-01T06:50:33.014303 #7724]  INFO -- default-centos-67:     @@ -557,28 +138,12 @@
+I, [2018-08-01T06:50:33.014381 #7724]  INFO -- default-centos-67:   Allow from all
+I, [2018-08-01T06:50:33.014683 #7724]  INFO -- default-centos-67:      </Directory>
+I, [2018-08-01T06:50:33.014746 #7724]  INFO -- default-centos-67:      
+I, [2018-08-01T06:50:33.014802 #7724]  INFO -- default-centos-67:     -#
+I, [2018-08-01T06:50:33.014858 #7724]  INFO -- default-centos-67:     -# WebDAV module configuration section.
+I, [2018-08-01T06:50:33.014914 #7724]  INFO -- default-centos-67:     -# 
+I, [2018-08-01T06:50:33.014969 #7724]  INFO -- default-centos-67:      <IfModule mod_dav_fs.c>
+I, [2018-08-01T06:50:33.015024 #7724]  INFO -- default-centos-67:     -    # Location of the WebDAV lock database.
+I, [2018-08-01T06:50:33.015093 #7724]  INFO -- default-centos-67:   DAVLockDB /var/lib/dav/lockdb
+I, [2018-08-01T06:50:33.015152 #7724]  INFO -- default-centos-67:      </IfModule>
+I, [2018-08-01T06:50:33.015284 #7724]  INFO -- default-centos-67:      
+I, [2018-08-01T06:50:33.015343 #7724]  INFO -- default-centos-67:     -#
+I, [2018-08-01T06:50:33.016121 #7724]  INFO -- default-centos-67:     -# ScriptAlias: This controls which directories contain server scripts.
+I, [2018-08-01T06:50:33.016196 #7724]  INFO -- default-centos-67:     -# ScriptAliases are essentially the same as Aliases, except that
+I, [2018-08-01T06:50:33.016256 #7724]  INFO -- default-centos-67:     -# documents in the realname directory are treated as applications and
+I, [2018-08-01T06:50:33.016314 #7724]  INFO -- default-centos-67:     -# run by the server when requested rather than as documents sent to the client.
+I, [2018-08-01T06:50:33.016372 #7724]  INFO -- default-centos-67:     -# The same rules about trailing "/" apply to ScriptAlias directives as to
+I, [2018-08-01T06:50:33.016661 #7724]  INFO -- default-centos-67:     -# Alias.
+I, [2018-08-01T06:50:33.016727 #7724]  INFO -- default-centos-67:     -#
+I, [2018-08-01T06:50:33.016785 #7724]  INFO -- default-centos-67:      ScriptAlias /cgi-bin/ "/var/www/cgi-bin/"
+I, [2018-08-01T06:50:33.016840 #7724]  INFO -- default-centos-67:      
+I, [2018-08-01T06:50:33.017846 #7724]  INFO -- default-centos-67:     -#
+I, [2018-08-01T06:50:33.017935 #7724]  INFO -- default-centos-67:     -# "/var/www/cgi-bin" should be changed to whatever your ScriptAliased
+I, [2018-08-01T06:50:33.017997 #7724]  INFO -- default-centos-67:     -# CGI directory exists, if you have that configured.
+I, [2018-08-01T06:50:33.018055 #7724]  INFO -- default-centos-67:     -#
+I, [2018-08-01T06:50:33.018111 #7724]  INFO -- default-centos-67:      <Directory "/var/www/cgi-bin">
+I, [2018-08-01T06:50:33.018181 #7724]  INFO -- default-centos-67:   AllowOverride None
+I, [2018-08-01T06:50:33.018250 #7724]  INFO -- default-centos-67:   Options None
+I, [2018-08-01T06:50:33.018310 #7724]  INFO -- default-centos-67:     @@ -586,35 +151,12 @@
+I, [2018-08-01T06:50:33.018376 #7724]  INFO -- default-centos-67:   Allow from all
+I, [2018-08-01T06:50:33.018492 #7724]  INFO -- default-centos-67:      </Directory>
+I, [2018-08-01T06:50:33.018550 #7724]  INFO -- default-centos-67:      
+I, [2018-08-01T06:50:33.019228 #7724]  INFO -- default-centos-67:     -#
+I, [2018-08-01T06:50:33.019301 #7724]  INFO -- default-centos-67:     -# Redirect allows you to tell clients about documents which used to exist in
+I, [2018-08-01T06:50:33.019363 #7724]  INFO -- default-centos-67:     -# your server's namespace, but do not anymore. This allows you to tell the
+I, [2018-08-01T06:50:33.019616 #7724]  INFO -- default-centos-67:     -# clients where to look for the relocated document.
+I, [2018-08-01T06:50:33.019717 #7724]  INFO -- default-centos-67:     -# Example:
+I, [2018-08-01T06:50:33.019775 #7724]  INFO -- default-centos-67:     -# Redirect permanent /foo http://www.example.com/bar
+I, [2018-08-01T06:50:33.019831 #7724]  INFO -- default-centos-67:     -
+I, [2018-08-01T06:50:33.019901 #7724]  INFO -- default-centos-67:     -#
+I, [2018-08-01T06:50:33.019960 #7724]  INFO -- default-centos-67:     -# Directives controlling the display of server-generated directory listings.
+I, [2018-08-01T06:50:33.020016 #7724]  INFO -- default-centos-67:     -#
+I, [2018-08-01T06:50:33.020070 #7724]  INFO -- default-centos-67:     -
+I, [2018-08-01T06:50:33.020124 #7724]  INFO -- default-centos-67:     -#
+I, [2018-08-01T06:50:33.020179 #7724]  INFO -- default-centos-67:     -# IndexOptions: Controls the appearance of server-generated directory
+I, [2018-08-01T06:50:33.020235 #7724]  INFO -- default-centos-67:     -# listings.
+I, [2018-08-01T06:50:33.020289 #7724]  INFO -- default-centos-67:     -#
+I, [2018-08-01T06:50:33.021317 #7724]  INFO -- default-centos-67:      IndexOptions FancyIndexing VersionSort NameWidth=* HTMLTable Charset=UTF-8
+I, [2018-08-01T06:50:33.021570 #7724]  INFO -- default-centos-67:     -
+I, [2018-08-01T06:50:33.021641 #7724]  INFO -- default-centos-67:     -#
+I, [2018-08-01T06:50:33.021698 #7724]  INFO -- default-centos-67:     -# AddIcon* directives tell the server which icon to show for different
+I, [2018-08-01T06:50:33.021755 #7724]  INFO -- default-centos-67:     -# files or filename extensions.  These are only displayed for
+I, [2018-08-01T06:50:33.021824 #7724]  INFO -- default-centos-67:     -# FancyIndexed directories.
+I, [2018-08-01T06:50:33.021884 #7724]  INFO -- default-centos-67:     -#
+I, [2018-08-01T06:50:33.021954 #7724]  INFO -- default-centos-67:      AddIconByEncoding (CMP,/icons/compressed.gif) x-compress x-gzip
+I, [2018-08-01T06:50:33.022013 #7724]  INFO -- default-centos-67:     -
+I, [2018-08-01T06:50:33.022069 #7724]  INFO -- default-centos-67:      AddIconByType (TXT,/icons/text.gif) text/*
+I, [2018-08-01T06:50:33.022125 #7724]  INFO -- default-centos-67:      AddIconByType (IMG,/icons/image2.gif) image/*
+I, [2018-08-01T06:50:33.022180 #7724]  INFO -- default-centos-67:      AddIconByType (SND,/icons/sound2.gif) audio/*
+I, [2018-08-01T06:50:33.022235 #7724]  INFO -- default-centos-67:      AddIconByType (VID,/icons/movie.gif) video/*
+I, [2018-08-01T06:50:33.022290 #7724]  INFO -- default-centos-67:     -
+I, [2018-08-01T06:50:33.252155 #7724]  INFO -- default-centos-67:      AddIcon /icons/binary.gif .bin .exe
+I, [2018-08-01T06:50:33.252314 #7724]  INFO -- default-centos-67:      AddIcon /icons/binhex.gif .hqx
+I, [2018-08-01T06:50:33.252448 #7724]  INFO -- default-centos-67:      AddIcon /icons/tar.gif .tar
+I, [2018-08-01T06:50:33.252518 #7724]  INFO -- default-centos-67:     @@ -630,82 +172,15 @@
+I, [2018-08-01T06:50:33.252577 #7724]  INFO -- default-centos-67:      AddIcon /icons/uuencoded.gif .uu
+I, [2018-08-01T06:50:33.252636 #7724]  INFO -- default-centos-67:      AddIcon /icons/script.gif .conf .sh .shar .csh .ksh .tcl
+I, [2018-08-01T06:50:33.252709 #7724]  INFO -- default-centos-67:      AddIcon /icons/tex.gif .tex
+I, [2018-08-01T06:50:33.252770 #7724]  INFO -- default-centos-67:     -AddIcon /icons/bomb.gif /core
+I, [2018-08-01T06:50:33.252826 #7724]  INFO -- default-centos-67:     -
+I, [2018-08-01T06:50:33.252882 #7724]  INFO -- default-centos-67:     +AddIcon /icons/bomb.gif core
+I, [2018-08-01T06:50:33.252938 #7724]  INFO -- default-centos-67:      AddIcon /icons/back.gif ..
+I, [2018-08-01T06:50:33.252993 #7724]  INFO -- default-centos-67:      AddIcon /icons/hand.right.gif README
+I, [2018-08-01T06:50:33.253049 #7724]  INFO -- default-centos-67:      AddIcon /icons/folder.gif ^^DIRECTORY^^
+I, [2018-08-01T06:50:33.253113 #7724]  INFO -- default-centos-67:      AddIcon /icons/blank.gif ^^BLANKICON^^
+I, [2018-08-01T06:50:33.253182 #7724]  INFO -- default-centos-67:     -
+I, [2018-08-01T06:50:33.254329 #7724]  INFO -- default-centos-67:     -#
+I, [2018-08-01T06:50:33.254600 #7724]  INFO -- default-centos-67:     -# DefaultIcon is which icon to show for files which do not have an icon
+I, [2018-08-01T06:50:33.254708 #7724]  INFO -- default-centos-67:     -# explicitly set.
+I, [2018-08-01T06:50:33.254769 #7724]  INFO -- default-centos-67:     -#
+I, [2018-08-01T06:50:33.254826 #7724]  INFO -- default-centos-67:      DefaultIcon /icons/unknown.gif
+I, [2018-08-01T06:50:33.254881 #7724]  INFO -- default-centos-67:      
+I, [2018-08-01T06:50:33.254951 #7724]  INFO -- default-centos-67:     -#
+I, [2018-08-01T06:50:33.255011 #7724]  INFO -- default-centos-67:     -# AddDescription allows you to place a short description after a file in
+I, [2018-08-01T06:50:33.255069 #7724]  INFO -- default-centos-67:     -# server-generated indexes.  These are only displayed for FancyIndexed
+I, [2018-08-01T06:50:33.255124 #7724]  INFO -- default-centos-67:     -# directories.
+I, [2018-08-01T06:50:33.255179 #7724]  INFO -- default-centos-67:     -# Format: AddDescription "description" filename
+I, [2018-08-01T06:50:33.255235 #7724]  INFO -- default-centos-67:     -#
+I, [2018-08-01T06:50:33.255291 #7724]  INFO -- default-centos-67:     -#AddDescription "GZIP compressed document" .gz
+I, [2018-08-01T06:50:33.256205 #7724]  INFO -- default-centos-67:     -#AddDescription "tar archive" .tar
+I, [2018-08-01T06:50:33.256279 #7724]  INFO -- default-centos-67:     -#AddDescription "GZIP compressed tar archive" .tgz
+I, [2018-08-01T06:50:33.256356 #7724]  INFO -- default-centos-67:     -
+I, [2018-08-01T06:50:33.256612 #7724]  INFO -- default-centos-67:     -#
+I, [2018-08-01T06:50:33.256713 #7724]  INFO -- default-centos-67:     -# ReadmeName is the name of the README file the server will look for by
+I, [2018-08-01T06:50:33.256773 #7724]  INFO -- default-centos-67:     -# default, and append to directory listings.
+I, [2018-08-01T06:50:33.256828 #7724]  INFO -- default-centos-67:     -#
+I, [2018-08-01T06:50:33.256884 #7724]  INFO -- default-centos-67:     -# HeaderName is the name of a file which should be prepended to
+I, [2018-08-01T06:50:33.256939 #7724]  INFO -- default-centos-67:     -# directory indexes. 
+I, [2018-08-01T06:50:33.256994 #7724]  INFO -- default-centos-67:      ReadmeName README.html
+I, [2018-08-01T06:50:33.257048 #7724]  INFO -- default-centos-67:      HeaderName HEADER.html
+I, [2018-08-01T06:50:33.257110 #7724]  INFO -- default-centos-67:     -
+I, [2018-08-01T06:50:33.258058 #7724]  INFO -- default-centos-67:     -#
+I, [2018-08-01T06:50:33.258297 #7724]  INFO -- default-centos-67:     -# IndexIgnore is a set of filenames which directory indexing should ignore
+I, [2018-08-01T06:50:33.258369 #7724]  INFO -- default-centos-67:     -# and not include in the listing.  Shell-style wildcarding is permitted.
+I, [2018-08-01T06:50:33.258661 #7724]  INFO -- default-centos-67:     -#
+I, [2018-08-01T06:50:33.258730 #7724]  INFO -- default-centos-67:     -IndexIgnore .??* *~ *# HEADER* README* RCS CVS *,v *,t
+I, [2018-08-01T06:50:33.258788 #7724]  INFO -- default-centos-67:     -
+I, [2018-08-01T06:50:33.258843 #7724]  INFO -- default-centos-67:     -#
+I, [2018-08-01T06:50:33.258898 #7724]  INFO -- default-centos-67:     -# DefaultLanguage and AddLanguage allows you to specify the language of 
+I, [2018-08-01T06:50:33.258955 #7724]  INFO -- default-centos-67:     -# a document. You can then use content negotiation to give a browser a 
+I, [2018-08-01T06:50:33.259013 #7724]  INFO -- default-centos-67:     -# file in a language the user can understand.
+I, [2018-08-01T06:50:33.259068 #7724]  INFO -- default-centos-67:     -#
+I, [2018-08-01T06:50:33.259890 #7724]  INFO -- default-centos-67:     -# Specify a default language. This means that all data
+I, [2018-08-01T06:50:33.259965 #7724]  INFO -- default-centos-67:     -# going out without a specific language tag (see below) will 
+I, [2018-08-01T06:50:33.260025 #7724]  INFO -- default-centos-67:     -# be marked with this one. You probably do NOT want to set
+I, [2018-08-01T06:50:33.260084 #7724]  INFO -- default-centos-67:     -# this unless you are sure it is correct for all cases.
+I, [2018-08-01T06:50:33.260140 #7724]  INFO -- default-centos-67:     -#
+I, [2018-08-01T06:50:33.260195 #7724]  INFO -- default-centos-67:     -# * It is generally better to not mark a page as 
+I, [2018-08-01T06:50:33.260753 #7724]  INFO -- default-centos-67:     -# * being a certain language than marking it with the wrong
+I, [2018-08-01T06:50:33.260826 #7724]  INFO -- default-centos-67:     -# * language!
+I, [2018-08-01T06:50:33.260883 #7724]  INFO -- default-centos-67:     -#
+I, [2018-08-01T06:50:33.261283 #7724]  INFO -- default-centos-67:     -# DefaultLanguage nl
+I, [2018-08-01T06:50:33.261355 #7724]  INFO -- default-centos-67:     -#
+I, [2018-08-01T06:50:33.261579 #7724]  INFO -- default-centos-67:     -# Note 1: The suffix does not have to be the same as the language
+I, [2018-08-01T06:50:33.261648 #7724]  INFO -- default-centos-67:     -# keyword --- those with documents in Polish (whose net-standard
+I, [2018-08-01T06:50:33.262003 #7724]  INFO -- default-centos-67:     -# language code is pl) may wish to use "AddLanguage pl .po" to
+I, [2018-08-01T06:50:33.262075 #7724]  INFO -- default-centos-67:     -# avoid the ambiguity with the common suffix for perl scripts.
+I, [2018-08-01T06:50:33.262134 #7724]  INFO -- default-centos-67:     -#
+I, [2018-08-01T06:50:33.262190 #7724]  INFO -- default-centos-67:     -# Note 2: The example entries below illustrate that in some cases 
+I, [2018-08-01T06:50:33.262246 #7724]  INFO -- default-centos-67:     -# the two character 'Language' abbreviation is not identical to 
+I, [2018-08-01T06:50:33.262319 #7724]  INFO -- default-centos-67:     -# the two character 'Country' code for its country,
+I, [2018-08-01T06:50:33.262377 #7724]  INFO -- default-centos-67:     -# E.g. 'Danmark/dk' versus 'Danish/da'.
+I, [2018-08-01T06:50:33.262604 #7724]  INFO -- default-centos-67:     -#
+I, [2018-08-01T06:50:33.262664 #7724]  INFO -- default-centos-67:     -# Note 3: In the case of 'ltz' we violate the RFC by using a three char
+I, [2018-08-01T06:50:33.262724 #7724]  INFO -- default-centos-67:     -# specifier. There is 'work in progress' to fix this and get
+I, [2018-08-01T06:50:33.262781 #7724]  INFO -- default-centos-67:     -# the reference data for rfc1766 cleaned up.
+I, [2018-08-01T06:50:33.262836 #7724]  INFO -- default-centos-67:     -#
+I, [2018-08-01T06:50:33.262891 #7724]  INFO -- default-centos-67:     -# Catalan (ca) - Croatian (hr) - Czech (cs) - Danish (da) - Dutch (nl)
+I, [2018-08-01T06:50:33.492320 #7724]  INFO -- default-centos-67:     -# English (en) - Esperanto (eo) - Estonian (et) - French (fr) - German (de)
+I, [2018-08-01T06:50:33.492805 #7724]  INFO -- default-centos-67:     -# Greek-Modern (el) - Hebrew (he) - Italian (it) - Japanese (ja)
+I, [2018-08-01T06:50:33.492909 #7724]  INFO -- default-centos-67:     -# Korean (ko) - Luxembourgeois* (ltz) - Norwegian Nynorsk (nn)
+I, [2018-08-01T06:50:33.492972 #7724]  INFO -- default-centos-67:     -# Norwegian (no) - Polish (pl) - Portugese (pt)
+I, [2018-08-01T06:50:33.493671 #7724]  INFO -- default-centos-67:     -# Brazilian Portuguese (pt-BR) - Russian (ru) - Swedish (sv)
+I, [2018-08-01T06:50:33.493829 #7724]  INFO -- default-centos-67:     -# Simplified Chinese (zh-CN) - Spanish (es) - Traditional Chinese (zh-TW)
+I, [2018-08-01T06:50:33.493897 #7724]  INFO -- default-centos-67:     -#
+I, [2018-08-01T06:50:33.493956 #7724]  INFO -- default-centos-67:      AddLanguage ca .ca
+I, [2018-08-01T06:50:33.494013 #7724]  INFO -- default-centos-67:      AddLanguage cs .cz .cs
+I, [2018-08-01T06:50:33.494699 #7724]  INFO -- default-centos-67:      AddLanguage da .dk
+I, [2018-08-01T06:50:33.494774 #7724]  INFO -- default-centos-67:     @@ -732,126 +207,16 @@
+I, [2018-08-01T06:50:33.494833 #7724]  INFO -- default-centos-67:      AddLanguage sv .sv
+I, [2018-08-01T06:50:33.494889 #7724]  INFO -- default-centos-67:      AddLanguage zh-CN .zh-cn
+I, [2018-08-01T06:50:33.495196 #7724]  INFO -- default-centos-67:      AddLanguage zh-TW .zh-tw
+I, [2018-08-01T06:50:33.495622 #7724]  INFO -- default-centos-67:     -
+I, [2018-08-01T06:50:33.495733 #7724]  INFO -- default-centos-67:     -#
+I, [2018-08-01T06:50:33.495794 #7724]  INFO -- default-centos-67:     -# LanguagePriority allows you to give precedence to some languages
+I, [2018-08-01T06:50:33.495851 #7724]  INFO -- default-centos-67:     -# in case of a tie during content negotiation.
+I, [2018-08-01T06:50:33.495906 #7724]  INFO -- default-centos-67:     -#
+I, [2018-08-01T06:50:33.496370 #7724]  INFO -- default-centos-67:     -# Just list the languages in decreasing order of preference. We have
+I, [2018-08-01T06:50:33.496860 #7724]  INFO -- default-centos-67:     -# more or less alphabetized them here. You probably want to change this.
+I, [2018-08-01T06:50:33.496933 #7724]  INFO -- default-centos-67:     -#
+I, [2018-08-01T06:50:33.496992 #7724]  INFO -- default-centos-67:      LanguagePriority en ca cs da de el eo es et fr he hr it ja ko ltz nl nn no pl pt pt-BR ru sv zh-CN zh-TW
+I, [2018-08-01T06:50:33.497049 #7724]  INFO -- default-centos-67:     -
+I, [2018-08-01T06:50:33.497104 #7724]  INFO -- default-centos-67:     -#
+I, [2018-08-01T06:50:33.497170 #7724]  INFO -- default-centos-67:     -# ForceLanguagePriority allows you to serve a result page rather than
+I, [2018-08-01T06:50:33.497270 #7724]  INFO -- default-centos-67:     -# MULTIPLE CHOICES (Prefer) [in case of a tie] or NOT ACCEPTABLE (Fallback)
+I, [2018-08-01T06:50:33.497339 #7724]  INFO -- default-centos-67:     -# [in case no accepted languages matched the available variants]
+I, [2018-08-01T06:50:33.497580 #7724]  INFO -- default-centos-67:     -#
+I, [2018-08-01T06:50:33.497690 #7724]  INFO -- default-centos-67:      ForceLanguagePriority Prefer Fallback
+I, [2018-08-01T06:50:33.497750 #7724]  INFO -- default-centos-67:     -
+I, [2018-08-01T06:50:33.497805 #7724]  INFO -- default-centos-67:     -#
+I, [2018-08-01T06:50:33.497859 #7724]  INFO -- default-centos-67:     -# Specify a default charset for all content served; this enables
+I, [2018-08-01T06:50:33.497917 #7724]  INFO -- default-centos-67:     -# interpretation of all content as UTF-8 by default.  To use the 
+I, [2018-08-01T06:50:33.497974 #7724]  INFO -- default-centos-67:     -# default browser choice (ISO-8859-1), or to allow the META tags
+I, [2018-08-01T06:50:33.499111 #7724]  INFO -- default-centos-67:     -# in HTML content to override this choice, comment out this
+I, [2018-08-01T06:50:33.499185 #7724]  INFO -- default-centos-67:     -# directive:
+I, [2018-08-01T06:50:33.499243 #7724]  INFO -- default-centos-67:     -#
+I, [2018-08-01T06:50:33.499299 #7724]  INFO -- default-centos-67:      AddDefaultCharset UTF-8
+I, [2018-08-01T06:50:33.499894 #7724]  INFO -- default-centos-67:     -
+I, [2018-08-01T06:50:33.499986 #7724]  INFO -- default-centos-67:     -#
+I, [2018-08-01T06:50:33.500048 #7724]  INFO -- default-centos-67:     -# AddType allows you to add to or override the MIME configuration
+I, [2018-08-01T06:50:33.500105 #7724]  INFO -- default-centos-67:     -# file mime.types for specific file types.
+I, [2018-08-01T06:50:33.500161 #7724]  INFO -- default-centos-67:     -#
+I, [2018-08-01T06:50:33.500215 #7724]  INFO -- default-centos-67:     -#AddType application/x-tar .tgz
+I, [2018-08-01T06:50:33.500269 #7724]  INFO -- default-centos-67:     -
+I, [2018-08-01T06:50:33.500371 #7724]  INFO -- default-centos-67:     -#
+I, [2018-08-01T06:50:33.500626 #7724]  INFO -- default-centos-67:     -# AddEncoding allows you to have certain browsers uncompress
+I, [2018-08-01T06:50:33.500711 #7724]  INFO -- default-centos-67:     -# information on the fly. Note: Not all browsers support this.
+I, [2018-08-01T06:50:33.500771 #7724]  INFO -- default-centos-67:     -# Despite the name similarity, the following Add* directives have nothing
+I, [2018-08-01T06:50:33.500828 #7724]  INFO -- default-centos-67:     -# to do with the FancyIndexing customization directives above.
+I, [2018-08-01T06:50:33.501781 #7724]  INFO -- default-centos-67:     -#
+I, [2018-08-01T06:50:33.502004 #7724]  INFO -- default-centos-67:     -#AddEncoding x-compress .Z
+I, [2018-08-01T06:50:33.502236 #7724]  INFO -- default-centos-67:     -#AddEncoding x-gzip .gz .tgz
+I, [2018-08-01T06:50:33.502305 #7724]  INFO -- default-centos-67:     -
+I, [2018-08-01T06:50:33.502363 #7724]  INFO -- default-centos-67:     -# If the AddEncoding directives above are commented-out, then you
+I, [2018-08-01T06:50:33.502675 #7724]  INFO -- default-centos-67:     -# probably should define those extensions to indicate media types:
+I, [2018-08-01T06:50:33.502746 #7724]  INFO -- default-centos-67:     -#
+I, [2018-08-01T06:50:33.502803 #7724]  INFO -- default-centos-67:      AddType application/x-compress .Z
+I, [2018-08-01T06:50:33.502859 #7724]  INFO -- default-centos-67:      AddType application/x-gzip .gz .tgz
+I, [2018-08-01T06:50:33.502915 #7724]  INFO -- default-centos-67:     -
+I, [2018-08-01T06:50:33.502969 #7724]  INFO -- default-centos-67:     -#
+I, [2018-08-01T06:50:33.503038 #7724]  INFO -- default-centos-67:     -#   MIME-types for downloading Certificates and CRLs
+I, [2018-08-01T06:50:33.503097 #7724]  INFO -- default-centos-67:     -#
+I, [2018-08-01T06:50:33.503152 #7724]  INFO -- default-centos-67:      AddType application/x-x509-ca-cert .crt
+I, [2018-08-01T06:50:33.503209 #7724]  INFO -- default-centos-67:      AddType application/x-pkcs7-crl    .crl
+I, [2018-08-01T06:50:33.614312 #7724]  INFO -- default-centos-67:     -
+I, [2018-08-01T06:50:33.614577 #7724]  INFO -- default-centos-67:     -#
+I, [2018-08-01T06:50:33.614646 #7724]  INFO -- default-centos-67:     -# AddHandler allows you to map certain file extensions to "handlers":
+I, [2018-08-01T06:50:33.614709 #7724]  INFO -- default-centos-67:     -# actions unrelated to filetype. These can be either built into the server
+I, [2018-08-01T06:50:33.617089 #7724]  INFO -- default-centos-67:     -# or added with the Action directive (see below)
+I, [2018-08-01T06:50:33.617181 #7724]  INFO -- default-centos-67:     -#
+I, [2018-08-01T06:50:33.617569 #7724]  INFO -- default-centos-67:     -# To use CGI scripts outside of ScriptAliased directories:
+I, [2018-08-01T06:50:33.617642 #7724]  INFO -- default-centos-67:     -# (You will also need to add "ExecCGI" to the "Options" directive.)
+I, [2018-08-01T06:50:33.617700 #7724]  INFO -- default-centos-67:     -#
+I, [2018-08-01T06:50:33.617771 #7724]  INFO -- default-centos-67:     -#AddHandler cgi-script .cgi
+I, [2018-08-01T06:50:33.617829 #7724]  INFO -- default-centos-67:     -
+I, [2018-08-01T06:50:33.617883 #7724]  INFO -- default-centos-67:     -#
+I, [2018-08-01T06:50:33.618223 #7724]  INFO -- default-centos-67:     -# For files that include their own HTTP headers:
+I, [2018-08-01T06:50:33.618298 #7724]  INFO -- default-centos-67:     -#
+I, [2018-08-01T06:50:33.620129 #7724]  INFO -- default-centos-67:     -#AddHandler send-as-is asis
+I, [2018-08-01T06:50:33.620221 #7724]  INFO -- default-centos-67:     -
+I, [2018-08-01T06:50:33.620281 #7724]  INFO -- default-centos-67:     -#
+I, [2018-08-01T06:50:33.620337 #7724]  INFO -- default-centos-67:     -# For type maps (negotiated resources):
+I, [2018-08-01T06:50:33.620436 #7724]  INFO -- default-centos-67:     -# (This is enabled by default to allow the Apache "It Worked" page
+I, [2018-08-01T06:50:33.620505 #7724]  INFO -- default-centos-67:     -#  to be distributed in multiple languages.)
+I, [2018-08-01T06:50:33.732237 #7724]  INFO -- default-centos-67:     -#
+I, [2018-08-01T06:50:33.732338 #7724]  INFO -- default-centos-67:      AddHandler type-map var
+I, [2018-08-01T06:50:33.733011 #7724]  INFO -- default-centos-67:     -
+I, [2018-08-01T06:50:33.733087 #7724]  INFO -- default-centos-67:     -#
+I, [2018-08-01T06:50:33.733148 #7724]  INFO -- default-centos-67:     -# Filters allow you to process content before it is sent to the client.
+I, [2018-08-01T06:50:33.733227 #7724]  INFO -- default-centos-67:     -#
+I, [2018-08-01T06:50:33.733304 #7724]  INFO -- default-centos-67:     -# To parse .shtml files for server-side includes (SSI):
+I, [2018-08-01T06:50:33.733365 #7724]  INFO -- default-centos-67:     -# (You will also need to add "Includes" to the "Options" directive.)
+I, [2018-08-01T06:50:33.733651 #7724]  INFO -- default-centos-67:     -#
+I, [2018-08-01T06:50:33.733758 #7724]  INFO -- default-centos-67:      AddType text/html .shtml
+I, [2018-08-01T06:50:33.733819 #7724]  INFO -- default-centos-67:      AddOutputFilter INCLUDES .shtml
+I, [2018-08-01T06:50:33.733875 #7724]  INFO -- default-centos-67:     -
+I, [2018-08-01T06:50:33.733929 #7724]  INFO -- default-centos-67:     -#
+I, [2018-08-01T06:50:33.733984 #7724]  INFO -- default-centos-67:     -# Action lets you define media types that will execute a script whenever
+I, [2018-08-01T06:50:33.734041 #7724]  INFO -- default-centos-67:     -# a matching file is called. This eliminates the need for repeated URL
+I, [2018-08-01T06:50:33.734098 #7724]  INFO -- default-centos-67:     -# pathnames for oft-used CGI file processors.
+I, [2018-08-01T06:50:33.735090 #7724]  INFO -- default-centos-67:     -# Format: Action media/type /cgi-script/location
+I, [2018-08-01T06:50:33.735165 #7724]  INFO -- default-centos-67:     -# Format: Action handler-name /cgi-script/location
+I, [2018-08-01T06:50:33.735223 #7724]  INFO -- default-centos-67:     -#
+I, [2018-08-01T06:50:33.735278 #7724]  INFO -- default-centos-67:     -
+I, [2018-08-01T06:50:33.735332 #7724]  INFO -- default-centos-67:     -#
+I, [2018-08-01T06:50:33.735600 #7724]  INFO -- default-centos-67:     -# Customizable error responses come in three flavors:
+I, [2018-08-01T06:50:33.735705 #7724]  INFO -- default-centos-67:     -# 1) plain text 2) local redirects 3) external redirects
+I, [2018-08-01T06:50:33.735787 #7724]  INFO -- default-centos-67:     -#
+I, [2018-08-01T06:50:33.735878 #7724]  INFO -- default-centos-67:     -# Some examples:
+I, [2018-08-01T06:50:33.735941 #7724]  INFO -- default-centos-67:     -#ErrorDocument 500 "The server made a boo boo."
+I, [2018-08-01T06:50:33.736826 #7724]  INFO -- default-centos-67:     -#ErrorDocument 404 /missing.html
+I, [2018-08-01T06:50:33.736902 #7724]  INFO -- default-centos-67:     -#ErrorDocument 404 "/cgi-bin/missing_handler.pl"
+I, [2018-08-01T06:50:33.736962 #7724]  INFO -- default-centos-67:     -#ErrorDocument 402 http://www.example.com/subscription_info.html
+I, [2018-08-01T06:50:33.737018 #7724]  INFO -- default-centos-67:     -#
+I, [2018-08-01T06:50:33.737072 #7724]  INFO -- default-centos-67:     -
+I, [2018-08-01T06:50:33.737127 #7724]  INFO -- default-centos-67:     -#
+I, [2018-08-01T06:50:33.737211 #7724]  INFO -- default-centos-67:     -# Putting this all together, we can internationalize error responses.
+I, [2018-08-01T06:50:33.737297 #7724]  INFO -- default-centos-67:     -#
+I, [2018-08-01T06:50:33.737376 #7724]  INFO -- default-centos-67:     -# We use Alias to redirect any /error/HTTP_<error>.html.var response to
+I, [2018-08-01T06:50:33.737688 #7724]  INFO -- default-centos-67:     -# our collection of by-error message multi-language collections.  We use 
+I, [2018-08-01T06:50:33.738333 #7724]  INFO -- default-centos-67:     -# includes to substitute the appropriate text.
+I, [2018-08-01T06:50:33.738596 #7724]  INFO -- default-centos-67:     -#
+I, [2018-08-01T06:50:33.738701 #7724]  INFO -- default-centos-67:     -# You can modify the messages' appearance without changing any of the
+I, [2018-08-01T06:50:33.738765 #7724]  INFO -- default-centos-67:     -# default HTTP_<error>.html.var files by adding the line:
+I, [2018-08-01T06:50:33.738821 #7724]  INFO -- default-centos-67:     -#
+I, [2018-08-01T06:50:33.738878 #7724]  INFO -- default-centos-67:     -#   Alias /error/include/ "/your/include/path/"
+I, [2018-08-01T06:50:33.738934 #7724]  INFO -- default-centos-67:     -#
+I, [2018-08-01T06:50:33.738990 #7724]  INFO -- default-centos-67:     -# which allows you to create your own set of files by starting with the
+I, [2018-08-01T06:50:33.739048 #7724]  INFO -- default-centos-67:     -# /var/www/error/include/ files and
+I, [2018-08-01T06:50:33.739105 #7724]  INFO -- default-centos-67:     -# copying them to /your/include/path/, even on a per-VirtualHost basis.
+I, [2018-08-01T06:50:33.739161 #7724]  INFO -- default-centos-67:     -#
+I, [2018-08-01T06:50:33.739215 #7724]  INFO -- default-centos-67:     -
+I, [2018-08-01T06:50:33.739270 #7724]  INFO -- default-centos-67:      Alias /error/ "/var/www/error/"
+I, [2018-08-01T06:50:33.739325 #7724]  INFO -- default-centos-67:      
+I, [2018-08-01T06:50:33.740131 #7724]  INFO -- default-centos-67:      <IfModule mod_negotiation.c>
+I, [2018-08-01T06:50:33.740205 #7724]  INFO -- default-centos-67:     @@ -867,44 +232,14 @@
+I, [2018-08-01T06:50:33.740287 #7724]  INFO -- default-centos-67:       ForceLanguagePriority Prefer Fallback
+I, [2018-08-01T06:50:33.740357 #7724]  INFO -- default-centos-67:   </Directory>
+I, [2018-08-01T06:50:33.740620 #7724]  INFO -- default-centos-67:      
+I, [2018-08-01T06:50:33.740722 #7724]  INFO -- default-centos-67:     -#    ErrorDocument 400 /error/HTTP_BAD_REQUEST.html.var
+I, [2018-08-01T06:50:33.740785 #7724]  INFO -- default-centos-67:     -#    ErrorDocument 401 /error/HTTP_UNAUTHORIZED.html.var
+I, [2018-08-01T06:50:33.740843 #7724]  INFO -- default-centos-67:     -#    ErrorDocument 403 /error/HTTP_FORBIDDEN.html.var
+I, [2018-08-01T06:50:33.740900 #7724]  INFO -- default-centos-67:     -#    ErrorDocument 404 /error/HTTP_NOT_FOUND.html.var
+I, [2018-08-01T06:50:33.740957 #7724]  INFO -- default-centos-67:     -#    ErrorDocument 405 /error/HTTP_METHOD_NOT_ALLOWED.html.var
+I, [2018-08-01T06:50:33.741015 #7724]  INFO -- default-centos-67:     -#    ErrorDocument 408 /error/HTTP_REQUEST_TIME_OUT.html.var
+I, [2018-08-01T06:50:33.741072 #7724]  INFO -- default-centos-67:     -#    ErrorDocument 410 /error/HTTP_GONE.html.var
+I, [2018-08-01T06:50:33.742001 #7724]  INFO -- default-centos-67:     -#    ErrorDocument 411 /error/HTTP_LENGTH_REQUIRED.html.var
+I, [2018-08-01T06:50:33.742361 #7724]  INFO -- default-centos-67:     -#    ErrorDocument 412 /error/HTTP_PRECONDITION_FAILED.html.var
+I, [2018-08-01T06:50:33.742623 #7724]  INFO -- default-centos-67:     -#    ErrorDocument 413 /error/HTTP_REQUEST_ENTITY_TOO_LARGE.html.var
+I, [2018-08-01T06:50:33.742724 #7724]  INFO -- default-centos-67:     -#    ErrorDocument 414 /error/HTTP_REQUEST_URI_TOO_LARGE.html.var
+I, [2018-08-01T06:50:33.742785 #7724]  INFO -- default-centos-67:     -#    ErrorDocument 415 /error/HTTP_UNSUPPORTED_MEDIA_TYPE.html.var
+I, [2018-08-01T06:50:33.742842 #7724]  INFO -- default-centos-67:     -#    ErrorDocument 500 /error/HTTP_INTERNAL_SERVER_ERROR.html.var
+I, [2018-08-01T06:50:33.742899 #7724]  INFO -- default-centos-67:     -#    ErrorDocument 501 /error/HTTP_NOT_IMPLEMENTED.html.var
+I, [2018-08-01T06:50:33.742957 #7724]  INFO -- default-centos-67:     -#    ErrorDocument 502 /error/HTTP_BAD_GATEWAY.html.var
+I, [2018-08-01T06:50:33.743014 #7724]  INFO -- default-centos-67:     -#    ErrorDocument 503 /error/HTTP_SERVICE_UNAVAILABLE.html.var
+I, [2018-08-01T06:50:33.743083 #7724]  INFO -- default-centos-67:     -#    ErrorDocument 506 /error/HTTP_VARIANT_ALSO_VARIES.html.var
+I, [2018-08-01T06:50:33.743141 #7724]  INFO -- default-centos-67:     -
+I, [2018-08-01T06:50:33.743215 #7724]  INFO -- default-centos-67:      </IfModule>
+I, [2018-08-01T06:50:33.743271 #7724]  INFO -- default-centos-67:      </IfModule>
+I, [2018-08-01T06:50:33.743326 #7724]  INFO -- default-centos-67:      
+I, [2018-08-01T06:50:33.978154 #7724]  INFO -- default-centos-67:     -#
+I, [2018-08-01T06:50:33.978242 #7724]  INFO -- default-centos-67:     -# The following directives modify normal HTTP response behavior to
+I, [2018-08-01T06:50:33.978998 #7724]  INFO -- default-centos-67:     -# handle known problems with browser implementations.
+I, [2018-08-01T06:50:33.979137 #7724]  INFO -- default-centos-67:     -#
+I, [2018-08-01T06:50:33.979241 #7724]  INFO -- default-centos-67:      BrowserMatch "Mozilla/2" nokeepalive
+I, [2018-08-01T06:50:33.979310 #7724]  INFO -- default-centos-67:      BrowserMatch "MSIE 4\.0b2;" nokeepalive downgrade-1.0 force-response-1.0
+I, [2018-08-01T06:50:33.979369 #7724]  INFO -- default-centos-67:      BrowserMatch "RealPlayer 4\.0" force-response-1.0
+I, [2018-08-01T06:50:33.979485 #7724]  INFO -- default-centos-67:      BrowserMatch "Java/1\.0" force-response-1.0
+I, [2018-08-01T06:50:33.979585 #7724]  INFO -- default-centos-67:      BrowserMatch "JDK/1\.0" force-response-1.0
+I, [2018-08-01T06:50:33.979645 #7724]  INFO -- default-centos-67:     -
+I, [2018-08-01T06:50:33.979700 #7724]  INFO -- default-centos-67:     -#
+I, [2018-08-01T06:50:33.979757 #7724]  INFO -- default-centos-67:     -# The following directive disables redirects on non-GET requests for
+I, [2018-08-01T06:50:33.979848 #7724]  INFO -- default-centos-67:     -# a directory that does not include the trailing slash.  This fixes a 
+I, [2018-08-01T06:50:33.979916 #7724]  INFO -- default-centos-67:     -# problem with Microsoft WebFolders which does not appropriately handle 
+I, [2018-08-01T06:50:33.979974 #7724]  INFO -- default-centos-67:     -# redirects for folders with DAV methods.
+I, [2018-08-01T06:50:33.980030 #7724]  INFO -- default-centos-67:     -# Same deal with Apple's DAV filesystem and Gnome VFS support for DAV.
+I, [2018-08-01T06:50:33.980086 #7724]  INFO -- default-centos-67:     -#
+I, [2018-08-01T06:50:33.980186 #7724]  INFO -- default-centos-67:      BrowserMatch "Microsoft Data Access Internet Publishing Provider" redirect-carefully
+I, [2018-08-01T06:50:33.980249 #7724]  INFO -- default-centos-67:      BrowserMatch "MS FrontPage" redirect-carefully
+I, [2018-08-01T06:50:33.980306 #7724]  INFO -- default-centos-67:      BrowserMatch "^WebDrive" redirect-carefully
+I, [2018-08-01T06:50:33.980363 #7724]  INFO -- default-centos-67:     @@ -912,99 +247,4 @@
+I, [2018-08-01T06:50:33.980473 #7724]  INFO -- default-centos-67:      BrowserMatch "^gnome-vfs/1.0" redirect-carefully
+I, [2018-08-01T06:50:33.980536 #7724]  INFO -- default-centos-67:      BrowserMatch "^XML Spy" redirect-carefully
+I, [2018-08-01T06:50:33.980592 #7724]  INFO -- default-centos-67:      BrowserMatch "^Dreamweaver-WebDAV-SCM1" redirect-carefully
+I, [2018-08-01T06:50:34.092009 #7724]  INFO -- default-centos-67:     -
+I, [2018-08-01T06:50:34.092114 #7724]  INFO -- default-centos-67:     -#
+I, [2018-08-01T06:50:34.092269 #7724]  INFO -- default-centos-67:     -# Allow server status reports generated by mod_status,
+I, [2018-08-01T06:50:34.092380 #7724]  INFO -- default-centos-67:     -# with the URL of http://servername/server-status
+I, [2018-08-01T06:50:34.092694 #7724]  INFO -- default-centos-67:     -# Change the ".example.com" to match your domain to enable.
+I, [2018-08-01T06:50:34.092896 #7724]  INFO -- default-centos-67:     -#
+I, [2018-08-01T06:50:34.093667 #7724]  INFO -- default-centos-67:     -#<Location /server-status>
+I, [2018-08-01T06:50:34.093746 #7724]  INFO -- default-centos-67:     -#    SetHandler server-status
+I, [2018-08-01T06:50:34.093806 #7724]  INFO -- default-centos-67:     -#    Order deny,allow
+I, [2018-08-01T06:50:34.093880 #7724]  INFO -- default-centos-67:     -#    Deny from all
+I, [2018-08-01T06:50:34.093938 #7724]  INFO -- default-centos-67:     -#    Allow from .example.com
+I, [2018-08-01T06:50:34.094010 #7724]  INFO -- default-centos-67:     -#</Location>
+I, [2018-08-01T06:50:34.094067 #7724]  INFO -- default-centos-67:     -
+I, [2018-08-01T06:50:34.094120 #7724]  INFO -- default-centos-67:     -#
+I, [2018-08-01T06:50:34.094849 #7724]  INFO -- default-centos-67:     -# Allow remote server configuration reports, with the URL of
+I, [2018-08-01T06:50:34.095008 #7724]  INFO -- default-centos-67:     -#  http://servername/server-info (requires that mod_info.c be loaded).
+I, [2018-08-01T06:50:34.095073 #7724]  INFO -- default-centos-67:     -# Change the ".example.com" to match your domain to enable.
+I, [2018-08-01T06:50:34.095130 #7724]  INFO -- default-centos-67:     -#
+I, [2018-08-01T06:50:34.095185 #7724]  INFO -- default-centos-67:     -#<Location /server-info>
+I, [2018-08-01T06:50:34.095241 #7724]  INFO -- default-centos-67:     -#    SetHandler server-info
+I, [2018-08-01T06:50:34.095296 #7724]  INFO -- default-centos-67:     -#    Order deny,allow
+I, [2018-08-01T06:50:34.095350 #7724]  INFO -- default-centos-67:     -#    Deny from all
+I, [2018-08-01T06:50:34.095594 #7724]  INFO -- default-centos-67:     -#    Allow from .example.com
+I, [2018-08-01T06:50:34.095713 #7724]  INFO -- default-centos-67:     -#</Location>
+I, [2018-08-01T06:50:34.095773 #7724]  INFO -- default-centos-67:     -
+I, [2018-08-01T06:50:34.095827 #7724]  INFO -- default-centos-67:     -#
+I, [2018-08-01T06:50:34.096661 #7724]  INFO -- default-centos-67:     -# Proxy Server directives. Uncomment the following lines to
+I, [2018-08-01T06:50:34.096737 #7724]  INFO -- default-centos-67:     -# enable the proxy server:
+I, [2018-08-01T06:50:34.096794 #7724]  INFO -- default-centos-67:     -#
+I, [2018-08-01T06:50:34.096850 #7724]  INFO -- default-centos-67:     -#<IfModule mod_proxy.c>
+I, [2018-08-01T06:50:34.096905 #7724]  INFO -- default-centos-67:     -#ProxyRequests On
+I, [2018-08-01T06:50:34.097040 #7724]  INFO -- default-centos-67:     -#
+I, [2018-08-01T06:50:34.097106 #7724]  INFO -- default-centos-67:     -#<Proxy *>
+I, [2018-08-01T06:50:34.097185 #7724]  INFO -- default-centos-67:     -#    Order deny,allow
+I, [2018-08-01T06:50:34.097256 #7724]  INFO -- default-centos-67:     -#    Deny from all
+I, [2018-08-01T06:50:34.097314 #7724]  INFO -- default-centos-67:     -#    Allow from .example.com
+I, [2018-08-01T06:50:34.097368 #7724]  INFO -- default-centos-67:     -#</Proxy>
+I, [2018-08-01T06:50:34.097957 #7724]  INFO -- default-centos-67:     -
+I, [2018-08-01T06:50:34.098027 #7724]  INFO -- default-centos-67:     -#
+I, [2018-08-01T06:50:34.098085 #7724]  INFO -- default-centos-67:     -# Enable/disable the handling of HTTP/1.1 "Via:" headers.
+I, [2018-08-01T06:50:34.098143 #7724]  INFO -- default-centos-67:     -# ("Full" adds the server version; "Block" removes all outgoing Via: headers)
+I, [2018-08-01T06:50:34.098200 #7724]  INFO -- default-centos-67:     -# Set to one of: Off | On | Full | Block
+I, [2018-08-01T06:50:34.098254 #7724]  INFO -- default-centos-67:     -#
+I, [2018-08-01T06:50:34.098952 #7724]  INFO -- default-centos-67:     -#ProxyVia On
+I, [2018-08-01T06:50:34.099043 #7724]  INFO -- default-centos-67:     -
+I, [2018-08-01T06:50:34.099103 #7724]  INFO -- default-centos-67:     -#
+I, [2018-08-01T06:50:34.099159 #7724]  INFO -- default-centos-67:     -# To enable a cache of proxied content, uncomment the following lines.
+I, [2018-08-01T06:50:34.099690 #7724]  INFO -- default-centos-67:     -# See http://httpd.apache.org/docs/2.2/mod/mod_cache.html for more details.
+I, [2018-08-01T06:50:34.099764 #7724]  INFO -- default-centos-67:     -#
+I, [2018-08-01T06:50:34.099822 #7724]  INFO -- default-centos-67:     -#<IfModule mod_disk_cache.c>
+I, [2018-08-01T06:50:34.100121 #7724]  INFO -- default-centos-67:     -#   CacheEnable disk /
+I, [2018-08-01T06:50:34.100192 #7724]  INFO -- default-centos-67:     -#   CacheRoot "/var/cache/mod_proxy"
+I, [2018-08-01T06:50:34.100262 #7724]  INFO -- default-centos-67:     -#</IfModule>
+I, [2018-08-01T06:50:34.100320 #7724]  INFO -- default-centos-67:     -#
+I, [2018-08-01T06:50:34.100560 #7724]  INFO -- default-centos-67:     -
+I, [2018-08-01T06:50:34.100674 #7724]  INFO -- default-centos-67:     -#</IfModule>
+I, [2018-08-01T06:50:34.100820 #7724]  INFO -- default-centos-67:     -# End of proxy directives.
+I, [2018-08-01T06:50:34.100879 #7724]  INFO -- default-centos-67:     -
+I, [2018-08-01T06:50:34.100935 #7724]  INFO -- default-centos-67:     -### Section 3: Virtual Hosts
+I, [2018-08-01T06:50:34.100989 #7724]  INFO -- default-centos-67:     -#
+I, [2018-08-01T06:50:34.101045 #7724]  INFO -- default-centos-67:     -# VirtualHost: If you want to maintain multiple domains/hostnames on your
+I, [2018-08-01T06:50:34.101102 #7724]  INFO -- default-centos-67:     -# machine you can setup VirtualHost containers for them. Most configurations
+I, [2018-08-01T06:50:34.101887 #7724]  INFO -- default-centos-67:     -# use only name-based virtual hosts so the server doesn't need to worry about
+I, [2018-08-01T06:50:34.101962 #7724]  INFO -- default-centos-67:     -# IP addresses. This is indicated by the asterisks in the directives below.
+I, [2018-08-01T06:50:34.102020 #7724]  INFO -- default-centos-67:     -#
+I, [2018-08-01T06:50:34.102587 #7724]  INFO -- default-centos-67:     -# Please see the documentation at 
+I, [2018-08-01T06:50:34.102668 #7724]  INFO -- default-centos-67:     -# <URL:http://httpd.apache.org/docs/2.2/vhosts/>
+I, [2018-08-01T06:50:34.102729 #7724]  INFO -- default-centos-67:     -# for further details before you try to setup virtual hosts.
+I, [2018-08-01T06:50:34.102785 #7724]  INFO -- default-centos-67:     -#
+I, [2018-08-01T06:50:34.102840 #7724]  INFO -- default-centos-67:     -# You may use the command line option '-S' to verify your virtual host
+I, [2018-08-01T06:50:34.102896 #7724]  INFO -- default-centos-67:     -# configuration.
+I, [2018-08-01T06:50:34.102952 #7724]  INFO -- default-centos-67:     -
+I, [2018-08-01T06:50:34.103007 #7724]  INFO -- default-centos-67:     -#
+I, [2018-08-01T06:50:34.103066 #7724]  INFO -- default-centos-67:     -# Use name-based virtual hosting.
+I, [2018-08-01T06:50:34.103155 #7724]  INFO -- default-centos-67:     -#
+I, [2018-08-01T06:50:34.332225 #7724]  INFO -- default-centos-67:     -#NameVirtualHost *:80
+I, [2018-08-01T06:50:34.332347 #7724]  INFO -- default-centos-67:     -#
+I, [2018-08-01T06:50:34.332622 #7724]  INFO -- default-centos-67:     -# NOTE: NameVirtualHost cannot be used without a port specifier 
+I, [2018-08-01T06:50:34.333164 #7724]  INFO -- default-centos-67:     -# (e.g. :80) if mod_ssl is being used, due to the nature of the
+I, [2018-08-01T06:50:34.333252 #7724]  INFO -- default-centos-67:     -# SSL protocol.
+I, [2018-08-01T06:50:34.333311 #7724]  INFO -- default-centos-67:     -#
+I, [2018-08-01T06:50:34.333366 #7724]  INFO -- default-centos-67:     -
+I, [2018-08-01T06:50:34.333650 #7724]  INFO -- default-centos-67:     -#
+I, [2018-08-01T06:50:34.333756 #7724]  INFO -- default-centos-67:     -# VirtualHost example:
+I, [2018-08-01T06:50:34.333822 #7724]  INFO -- default-centos-67:     -# Almost any Apache directive may go into a VirtualHost container.
+I, [2018-08-01T06:50:34.333880 #7724]  INFO -- default-centos-67:     -# The first VirtualHost section is used for requests without a known
+I, [2018-08-01T06:50:34.333936 #7724]  INFO -- default-centos-67:     -# server name.
+I, [2018-08-01T06:50:34.333991 #7724]  INFO -- default-centos-67:     -#
+I, [2018-08-01T06:50:34.334046 #7724]  INFO -- default-centos-67:     -#<VirtualHost *:80>
+I, [2018-08-01T06:50:34.334102 #7724]  INFO -- default-centos-67:     -#    ServerAdmin webmaster@dummy-host.example.com
+I, [2018-08-01T06:50:34.334198 #7724]  INFO -- default-centos-67:     -#    DocumentRoot /www/docs/dummy-host.example.com
+I, [2018-08-01T06:50:34.334259 #7724]  INFO -- default-centos-67:     -#    ServerName dummy-host.example.com
+I, [2018-08-01T06:50:34.334331 #7724]  INFO -- default-centos-67:     -#    ErrorLog logs/dummy-host.example.com-error_log
+I, [2018-08-01T06:50:34.334436 #7724]  INFO -- default-centos-67:     -#    CustomLog logs/dummy-host.example.com-access_log common
+I, [2018-08-01T06:50:34.335273 #7724]  INFO -- default-centos-67:     -#</VirtualHost>
+I, [2018-08-01T06:50:37.716355 #7724]  INFO -- default-centos-67:   * service[httpd] action enable
+I, [2018-08-01T06:50:37.719968 #7724]  INFO -- default-centos-67:     - enable service service[httpd]
+I, [2018-08-01T06:50:41.884459 #7724]  INFO -- default-centos-67:   * service[httpd] action start
+I, [2018-08-01T06:50:41.886244 #7724]  INFO -- default-centos-67:     - start service service[httpd]
+I, [2018-08-01T06:50:49.974469 #7724]  INFO -- default-centos-67:   * service[httpd] action restart
+I, [2018-08-01T06:50:49.976966 #7724]  INFO -- default-centos-67:     - restart service service[httpd]
+I, [2018-08-01T06:50:51.322435 #7724]  INFO -- default-centos-67: 
+I, [2018-08-01T06:50:51.322582 #7724]  INFO -- default-centos-67: Running handlers:
+I, [2018-08-01T06:50:51.322648 #7724]  INFO -- default-centos-67: Running handlers complete
+I, [2018-08-01T06:50:51.322706 #7724]  INFO -- default-centos-67: Chef Client finished, 6/6 resources updated in 01 minutes 07 seconds
+I, [2018-08-01T06:50:52.453748 #7724]  INFO -- default-centos-67: Finished converging <default-centos-67> (3m54.97s).
+I, [2018-08-01T06:50:52.453995 #7724]  INFO -- default-centos-67: -----> Setting up <default-centos-67>...
+I, [2018-08-01T06:50:52.540813 #7724]  INFO -- default-centos-67: Finished setting up <default-centos-67> (0m0.00s).
+I, [2018-08-01T06:50:52.541014 #7724]  INFO -- default-centos-67: -----> Verifying <default-centos-67>...
+I, [2018-08-01T06:50:57.554617 #7724]  INFO -- default-centos-67: Loaded tests from test/smoke/default 
+E, [2018-08-01T06:50:58.206804 #7724] ERROR -- default-centos-67: Verify failed on instance <default-centos-67>.
+E, [2018-08-01T06:50:58.207029 #7724] ERROR -- default-centos-67: ------Exception-------
+E, [2018-08-01T06:50:58.207090 #7724] ERROR -- default-centos-67: Class: Kitchen::ActionFailed
+E, [2018-08-01T06:50:58.207155 #7724] ERROR -- default-centos-67: Message: Inspec Runner returns 1
+E, [2018-08-01T06:50:58.207203 #7724] ERROR -- default-centos-67: ----------------------
+E, [2018-08-01T06:50:58.207278 #7724] ERROR -- default-centos-67: ------Backtrace-------
+E, [2018-08-01T06:50:58.207329 #7724] ERROR -- default-centos-67: /opt/chefdk/embedded/lib/ruby/gems/2.4.0/gems/kitchen-inspec-0.19.0/lib/kitchen/verifier/inspec.rb:96:in `call'
+E, [2018-08-01T06:50:58.207377 #7724] ERROR -- default-centos-67: /opt/chefdk/embedded/lib/ruby/gems/2.4.0/gems/test-kitchen-1.16.0/lib/kitchen/instance.rb:434:in `block in verify_action'
+E, [2018-08-01T06:50:58.207620 #7724] ERROR -- default-centos-67: /opt/chefdk/embedded/lib/ruby/gems/2.4.0/gems/test-kitchen-1.16.0/lib/kitchen/instance.rb:527:in `synchronize_or_call'
+E, [2018-08-01T06:50:58.207715 #7724] ERROR -- default-centos-67: /opt/chefdk/embedded/lib/ruby/gems/2.4.0/gems/test-kitchen-1.16.0/lib/kitchen/instance.rb:489:in `block in action'
+E, [2018-08-01T06:50:58.207765 #7724] ERROR -- default-centos-67: /opt/chefdk/embedded/lib/ruby/2.4.0/benchmark.rb:293:in `measure'
+E, [2018-08-01T06:50:58.207812 #7724] ERROR -- default-centos-67: /opt/chefdk/embedded/lib/ruby/gems/2.4.0/gems/test-kitchen-1.16.0/lib/kitchen/instance.rb:488:in `action'
+E, [2018-08-01T06:50:58.207859 #7724] ERROR -- default-centos-67: /opt/chefdk/embedded/lib/ruby/gems/2.4.0/gems/test-kitchen-1.16.0/lib/kitchen/instance.rb:426:in `verify_action'
+E, [2018-08-01T06:50:58.207905 #7724] ERROR -- default-centos-67: /opt/chefdk/embedded/lib/ruby/gems/2.4.0/gems/test-kitchen-1.16.0/lib/kitchen/instance.rb:359:in `block in transition_to'
+E, [2018-08-01T06:50:58.207952 #7724] ERROR -- default-centos-67: /opt/chefdk/embedded/lib/ruby/gems/2.4.0/gems/test-kitchen-1.16.0/lib/kitchen/instance.rb:358:in `each'
+E, [2018-08-01T06:50:58.207998 #7724] ERROR -- default-centos-67: /opt/chefdk/embedded/lib/ruby/gems/2.4.0/gems/test-kitchen-1.16.0/lib/kitchen/instance.rb:358:in `transition_to'
+E, [2018-08-01T06:50:58.208059 #7724] ERROR -- default-centos-67: /opt/chefdk/embedded/lib/ruby/gems/2.4.0/gems/test-kitchen-1.16.0/lib/kitchen/instance.rb:157:in `verify'
+E, [2018-08-01T06:50:58.208109 #7724] ERROR -- default-centos-67: /opt/chefdk/embedded/lib/ruby/gems/2.4.0/gems/test-kitchen-1.16.0/lib/kitchen/instance.rb:186:in `block in test'
+E, [2018-08-01T06:50:58.208159 #7724] ERROR -- default-centos-67: /opt/chefdk/embedded/lib/ruby/2.4.0/benchmark.rb:293:in `measure'
+E, [2018-08-01T06:50:58.208205 #7724] ERROR -- default-centos-67: /opt/chefdk/embedded/lib/ruby/gems/2.4.0/gems/test-kitchen-1.16.0/lib/kitchen/instance.rb:182:in `test'
+E, [2018-08-01T06:50:58.208251 #7724] ERROR -- default-centos-67: /opt/chefdk/embedded/lib/ruby/gems/2.4.0/gems/test-kitchen-1.16.0/lib/kitchen/command.rb:197:in `public_send'
+E, [2018-08-01T06:50:58.208297 #7724] ERROR -- default-centos-67: /opt/chefdk/embedded/lib/ruby/gems/2.4.0/gems/test-kitchen-1.16.0/lib/kitchen/command.rb:197:in `run_action_in_thread'
+E, [2018-08-01T06:50:58.208342 #7724] ERROR -- default-centos-67: /opt/chefdk/embedded/lib/ruby/gems/2.4.0/gems/test-kitchen-1.16.0/lib/kitchen/command.rb:169:in `block (2 levels) in run_action'
+E, [2018-08-01T06:50:58.208474 #7724] ERROR -- default-centos-67: ----End Backtrace-----
